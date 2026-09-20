@@ -6,13 +6,26 @@ The primary consumer of this README is an LLM or autonomous agent managing the f
 
 > **Primary rule:** manage this repository as a connected evidence system, not as a collection of independent checklists.
 
+## Framework version and external governance boundary
+
+The canonical [Accessibility Test-Led Delivery Framework](Accessibility_Test_Led_Delivery_Framework.md) is version 1.1. It includes separate records and controls for exceptions and evidence-based departures. Do not use an earlier framework version to interpret or generate those decisions.
+
+This repository supplies the generic accessibility delivery and evidence system. It does not determine European Accessibility Act scope or approve an EAA conformity claim. For EAA work, use it within this route:
+
+1. [EAA Scope and Applicability Gate](https://github.com/Double-FW/Articles_and_other_LLM_Training_Resources/blob/main/EAA_Scope_and_Applicability_Gate.md);
+2. [Inclusive Digital Service Outcome Dataset](https://github.com/Double-FW/Inclusive_and_Effective_Design/blob/main/Inclusive_Digital_Service_Outcome_Dataset.md);
+3. this repository's test-led delivery records; and
+4. [EAA Evidence and Conformity Record Model](https://github.com/Double-FW/Articles_and_other_LLM_Training_Resources/blob/main/EAA_Evidence_and_Conformity_Record_Model.md).
+
+Preserve the authority boundary: this repository can supply evidence, issues, exceptions, departures and release decisions, but applicable law and the authorised Layer 1 and Layer 3 reviewers control the legal conclusion.
+
 ---
 
 ## 1. Autonomous manager mission
 
 An LLM managing this repository must preserve and improve the chain:
 
-> user outcome → requirement → affected pattern or journey → repository test → validation method → implementation → execution evidence → issue or exception → release decision → operational learning
+> user outcome → requirement → affected pattern or journey → repository test → validation method → implementation → execution evidence → issue, exception or baseline departure → release decision → operational learning
 
 The manager should:
 
@@ -45,6 +58,8 @@ These rules apply to every retrieval, analysis, edit, and generated artefact.
 10. **Keep the framework organisation-agnostic.** Product-specific profiles and evidence may be generated from the framework, but must not be written into canonical repository assets as universal rules.
 11. **Do not silently renumber, delete, merge, or redefine tests.** These are governed semantic changes requiring explicit review.
 12. **Never make an unrestricted accessibility claim from sampled evidence.** State scope, environments, versions, exclusions, and limitations.
+13. **Keep exceptions and departures separate.** An exception accepts a known unresolved failure or residual disadvantage. A baseline departure selects a different approach supported by equal-or-better-outcome evidence where applicable obligations permit it. Neither silently changes a standards result.
+14. **Do not determine legal applicability from a test result.** EAA scope, legal limitations and requirement conclusions belong to the relevant canonical governance layers.
 
 ---
 
@@ -147,6 +162,7 @@ Use explicit namespaces in generated data and prose:
 | `EXEC` | Test execution | Locally governed, for example `EXEC-2026-001` |
 | `ISSUE` | Barrier or defect | Local issue-system identity |
 | `EXC` | Approved exception | Locally governed exception identity |
+| `BDEP` | Approved evidence-based baseline departure | Locally governed departure identity |
 
 The `CTL` and `MAWTL` prefixes are repository-management conventions supplied by this README. They do not alter the numbering or source text inside the libraries.
 
@@ -317,6 +333,7 @@ Run relevant checks after every change. A full consistency review should run all
 - Manual-primary outcomes have not been replaced by automated proxies.
 - Tool `incomplete`, `needs review`, and `error` states are not counted as passes.
 - Exceptions have owners, rationale, compensating actions, review dates, and expiry dates.
+- Baseline departures identify the baseline, equal-or-better-outcome evidence, standards result, permitted claims, authorised approver, monitoring and review date.
 - Release claims do not exceed the tested scope.
 
 ### LLM-specific checks
