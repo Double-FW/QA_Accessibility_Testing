@@ -1,8 +1,8 @@
 ---
 title: "Accessibility Test-Led Delivery Framework"
 subtitle: "An organisation-agnostic model for requirements, design, engineering, testing, release, and continuous improvement"
-version: "1.0"
-date: "2026-09-17"
+version: "1.1"
+date: "2026-09-20"
 status: "Reusable framework"
 repository: "https://github.com/Double-FW/QA_Accessibility_Testing"
 source_boundary: "Only documents and test assets in the Double FW QA_Accessibility_Testing repository"
@@ -21,6 +21,7 @@ retrieval_notes:
   - "Use repository test numbers with their library name; a number alone is ambiguous."
   - "Do not treat automated coverage as proof of accessibility or conformance."
   - "Do not merge the 200-item canonical library and the 432-item detailed library without an approved crosswalk."
+  - "Treat WCAG and other target profiles as governed baselines and evidence sources, not as the complete definition of user experience."
 ---
 
 # Accessibility Test-Led Delivery Framework
@@ -41,7 +42,7 @@ The framework is grounded only in the documents and tests held in the [Double FW
 |---|---|---|
 | Understand the operating model | ATLF-01 and ATLF-02 | ATLF-05 |
 | Select repository tests | ATLF-03 and ATLF-11 | ATLF-12 |
-| Define responsibilities | ATLF-04 | ATLF-16 |
+| Define responsibilities or approve an exception | ATLF-04 | ATLF-10 and ATLF-16 |
 | Plan requirements, design, or architecture | ATLF-06 and ATLF-07 | ATLF-13 |
 | Implement automated checks | ATLF-08 and ATLF-12 | ATLF-13 |
 | Plan manual, assistive-technology, or user testing | ATLF-09 and ATLF-11 | ATLF-14 |
@@ -72,16 +73,17 @@ Accessibility test-led delivery begins with user outcomes, not with a scanner. R
 
 The core outcome is a traceable evidence chain:
 
-> user outcome → requirement → affected pattern or journey → selected repository test → test implementation → execution result → issue or exception → release decision → operational follow-up
+> user outcome → requirement → affected pattern or journey → selected repository test → test implementation → execution result → issue, exception, or baseline departure → release decision → operational follow-up
 
-The framework has six controls:
+The framework has seven controls:
 
-1. **One governed source model.** Requirements, tests, implementations, executions, issues, and exceptions are different records linked by stable identifiers.
+1. **One governed source model.** Requirements, tests, implementations, executions, issues, exceptions, and baseline departures are different records linked by stable identifiers.
 2. **Layered testing.** Component, page or feature, journey, and live-service evidence answer different questions and must not be collapsed into one score.
 3. **Automation with declared limits.** Automated checks provide repeatability and scale. They do not decide whether language is helpful, a journey is understandable, focus behaviour is usable, or an alternative conveys the right meaning.
 4. **Human evidence by design.** Manual technical checks, assistive-technology evaluation, and research with disabled people are planned work, not late-stage contingency.
 5. **Evidence-based gates.** Work moves forward because the expected evidence exists and is credible, not because a checklist total or automated score looks favourable.
 6. **Continuous correction.** Repeated failures are corrected in shared patterns, tokens, components, content rules, and test infrastructure so that later teams inherit the improvement.
+7. **Governed flexibility.** WCAG, repository tests, and declared target profiles provide strong baselines, but they do not by themselves define the full quality or equality of an experience. Any departure must be evidence-led, explicitly authorised, limited in scope, and monitored against real user outcomes.
 
 The framework is deliberately tool-agnostic. The repository contains AXE-specific rule, remediation, and design-system mappings, plus a broader automated-to-manual comparison. Those assets support selection and implementation; they do not require every organisation to use the same runner or pipeline.
 
@@ -114,6 +116,8 @@ The framework can be applied to websites, web applications, mobile applications,
 ### Boundaries
 
 - The framework does not set an organisation's legal or policy target. The target profile must be declared for each product or service.
+- WCAG and other declared target profiles are governed baselines and evidence sources. They do not cover every aspect of expectation, effort, autonomy, privacy, equivalence, satisfaction, or enjoyment, and they may not fully anticipate every specialist or emerging service context.
+- A departure from a baseline is not automatically a conformance exception. It may be considered only where applicable legal, contractual, regulatory, and policy obligations permit it, and it must follow the authority and evidence controls in ATLF-04.
 - A successful automated run is not a conformance statement and does not establish that disabled people can complete a task.
 - A technical conformance review is not the same as usability evaluation. Both may be needed for a decision.
 - Test volume is not coverage. The repository contains overlapping and differently structured libraries; teams must select tests because they cover in-scope outcomes and risks.
@@ -129,7 +133,7 @@ An in-scope accessibility requirement is complete only when it has:
 - one or more selected repository tests or a documented reason that a new test is needed;
 - a defined validation method and expected evidence;
 - a result for every required environment and representative state;
-- an owned issue, approved time-bound exception, or pass supported by evidence;
+- an owned issue, approved time-bound exception, approved evidence-based departure, or pass supported by evidence;
 - a clear effect on the release or operational decision.
 
 **Repository sources:** [Test Management Approach](Testing_Approach.md); [Accessibility ACT-Style Test System](Accessibility_ACT-Style_Test_System.md).
@@ -174,40 +178,68 @@ Do not deduplicate by title alone. Two tests may share a theme while evaluating 
 
 **Keywords:** governance, RACI, accountability, ownership, exceptions, risk acceptance
 
-Role names can be adapted, but responsibilities must remain explicit. One person may hold several roles in a small team; that does not remove the decisions.
+Role names can be adapted, but responsibilities and delegation limits must remain explicit. One person may hold several roles in a small team; that does not remove the decisions or allow evidence production, exception recommendation, and risk acceptance to be treated as the same decision.
 
 | Capability or role | Core responsibility |
 |---|---|
-| Business or service accountable owner | Funds the work, owns service risk, and approves release risk within delegated authority. |
-| Product owner or manager | Owns in-scope outcomes, prioritisation, acceptance criteria, and customer impact. |
+| Business or service accountable owner | Funds the work, owns service risk, and approves release risk within documented delegated authority, organisational risk appetite, and escalation thresholds. |
+| Product owner or manager | Owns in-scope outcomes, prioritisation, acceptance criteria, customer impact, remediation priorities, and exception or departure recommendations. This role does not accept release risk or approve a departure unless the same person has been explicitly delegated the accountable-owner authority. |
+| Executive or enterprise-risk authority | Sets or applies organisational risk appetite and decides exceptions or departures above delegated thresholds, including systemic, high-impact, legally sensitive, and long-duration matters. |
 | Delivery manager | Plans gates, dependencies, capacity, reporting, and handover. |
 | Design and content | Define perceptible, operable, understandable, and robust behaviour in designs, content, and reusable patterns. |
 | Architecture | Owns structural choices, platform constraints, shared contracts, integration risks, and testability. |
 | Engineering | Implements accessible behaviour, developer checks, automated assertions, and remediation at source. |
-| Test management and QA | Own the integrated strategy, coverage model, environments, execution, evidence quality, and completion recommendation. |
-| Accessibility specialist | Supports interpretation, complex assessment, assurance, capability building, and repository quality. |
-| Research | Plans and conducts ethical evaluation with disabled participants where real-world usability evidence is required. |
+| Test management and QA | Own the integrated strategy, coverage model, environments, execution, evidence quality, governed result classification, and completion recommendation. They do not accept business risk merely because they produced or reviewed the evidence. |
+| Accessibility specialist | Supports interpretation, complex assessment, assurance, capability building, and repository quality. Specialist advice informs but does not transfer accountability for business risk. |
+| Research | Plans and conducts ethical evaluation with disabled participants where real-world usability evidence is required, and reports the limits and uncertainty of that evidence. |
 | Procurement and supplier management | Sets evidence requirements, evaluates supplier claims, records commitments, and manages contractual remediation. |
 | Operations or service management | Owns production monitoring, accepted defects, exception expiry, incident response, and regression after change. |
-| Disabled participants and customer representatives | Provide evidence about actual task effectiveness, effort, comprehension, and experience; they do not carry compliance accountability. |
+| Disabled participants and customer representatives | Provide evidence about task effectiveness, effort, error recovery, comprehension, autonomy, equivalence, satisfaction, and experience; they do not carry compliance or risk-acceptance accountability. |
 
 ### Required decision rights
 
-An organisation must name who can:
+The governance model must distinguish the following decisions. A named person may hold more than one role, but the decision record must show which authority they exercised.
 
-- approve the canonical requirement and test profile used by a product;
-- approve changes to mappings, test procedures, rule profiles, and thresholds;
-- decide that a result is conclusive, inconclusive, blocked, or not applicable;
-- set the evidence required at each delivery gate;
-- accept an exception, define its maximum duration, and require compensating action;
-- stop or delay release because the evidence or user impact is unacceptable;
-- accept supplier evidence or require independent testing;
-- close an issue after remediation and retest;
-- own unresolved work after release.
+| Decision | Default authority | Required control |
+|---|---|---|
+| Classify a test result and its evidential confidence | Test management, QA, or another competent reviewer | Use the governed result vocabulary and record uncertainty; delivery pressure cannot convert a fail or an inconclusive result into a pass. |
+| Assess user and service impact | Product, research, accessibility, and relevant service specialists | Consider the affected population, task, context, frequency, severity, workarounds, compounding barriers, and limits of the evidence. |
+| Prioritise remediation | Product or service owner | Record rationale, owner, target date, dependencies, and consequences of delay. |
+| Recommend an exception or evidence-based departure | Product or service owner | For an exception, provide the evidence set, alternatives, residual disadvantage, compensating action, proposed duration, and monitoring. For a departure, provide equal-or-better-outcome evidence, uncertainty, claim limits, monitoring, and review triggers. |
+| Accept an exception or approve a departure within the documented threshold | Business or service accountable owner | Act only within delegated authority. Record the decision conditions and review date, plus an expiry for every exception or time-limited approval. |
+| Accept an exception or approve a departure above the documented threshold | Executive or enterprise-risk authority | Apply organisational risk appetite and any required legal, compliance, procurement, or independent challenge. |
+| Set organisational risk appetite and oversight | Board, executive committee, or equivalent governing authority | Define delegation and escalation boundaries and review aggregate or systemic exposure. |
+
+An organisation must also name who can approve the canonical requirement and test profile; change mappings, procedures, rule profiles, and thresholds; set gate evidence; stop or delay release; accept supplier evidence or require independent testing; close an issue after remediation and retest; and own unresolved work after release.
+
+### Delegated authority and escalation
+
+Delegation must be documented before a release decision. It must state the risk levels, service contexts, maximum duration, financial or customer thresholds, and types of obligation that the accountable owner may accept. The following normally require escalation rather than routine product-level acceptance:
+
+- material loss of independent access, privacy, dignity, or equivalent outcome;
+- exclusion from a critical, safety-related, high-value, or high-consequence task;
+- a high-impact or critical barrier, including a low-frequency barrier with severe consequences;
+- systemic failure in a shared component, platform, supplier, or design pattern;
+- repeated or renewed exceptions that indicate remediation is not progressing;
+- departure from an applicable legal, regulatory, contractual, or organisational target;
+- an exception that would exceed the maximum delegated duration; or
+- evidence whose uncertainty is too great for the proposed claim or decision.
+
+### Evidence-based departure from a baseline
+
+WCAG, declared target profiles, repository tests, and organisational requirements are default baselines and evidence sources. They do not alone define the total quality, equality, or acceptability of a user experience. A departure may be approved only where applicable legal, regulatory, contractual, and policy obligations permit it and proportionate evidence supports the conclusion that the alternative provides equal or better outcomes for the relevant disabled users in the real service context.
+
+An exception and an evidence-based departure are not interchangeable. An exception accepts a known unresolved failure, limitation, or residual disadvantage and must be time-bound. An evidence-based departure records that a different approach has been chosen because the evidence supports an equal or better outcome in context; it remains subject to periodic review and change-triggered reassessment. Neither changes the result of a standards test or permits an unsupported claim of conformance.
+
+Assessment must consider task success, time and effort, errors and recovery, autonomy, privacy, dignity, equivalence, predictability, satisfaction, and, where relevant to the service, enjoyment. Evidence may combine standards analysis, expert assessment, task-based evaluation with disabled people, quantitative research or analytics, qualitative findings, complaints, support data, and operational evidence.
+
+Statistical significance can strengthen a general claim when the sample and study design support population-level inference, but it is neither always necessary nor sufficient. The absence of an observed barrier in a sample is not proof that no barrier exists. Decisions must consider under-represented users, rare but severe exclusion, contradictory evidence, and the limits of the research.
+
+The decision record must identify the baseline being departed from; the service context and rationale; affected user groups and tasks; evidence and uncertainty; alternatives considered; any residual disadvantage; compensating action; monitoring signals; the authorised approver and delegation basis; and the review date. Exceptions and time-limited approvals must also have an expiry. A material service change, complaint pattern, research finding, standards change, or other significant new evidence must trigger reassessment. A departure must not be described as conformance where the relevant conformance rules do not permit that claim.
 
 ### Independence and challenge
 
-The person who implemented a material fix may provide evidence, but high-risk closure should be reviewed by someone able to challenge the interpretation. Product pressure must not silently change a fail into a pass. Where independence is limited, record that limitation as part of confidence in the evidence.
+The person who implemented a material fix may provide evidence, but high-risk closure should be reviewed by someone able to challenge the interpretation. Product pressure must not silently change a fail into a pass, and positive research evidence must not silently change a standards failure into conformance. Where independence is limited, record that limitation as part of confidence in the evidence. Disabled participants provide evidence; they must not be asked to carry the organisation's accountability for accepting risk.
 
 **Repository source:** [Test Management Approach](Testing_Approach.md).
 
@@ -227,7 +259,7 @@ The person who implemented a material fix may provide evidence, but high-risk cl
 | Architecture | Accessibility decision records, component contracts, state model, and environment matrix | Can the solution meet the outcomes and expose them to reliable evaluation? |
 | Engineering | Implemented behaviour, component tests, automated checks, and developer evidence | Has the product been built against the agreed contracts and checked before QA handover? |
 | Integrated verification | Automated, manual, assistive-technology, and user evidence linked to requirements | Is coverage sufficient across components, states, journeys, and environments? |
-| Release | Accessibility test report, unresolved issues, exception decisions, and approval | Does the weight of evidence justify release and accurately constrain any claims? |
+| Release | Accessibility test report, unresolved issues, exception or departure decisions, accountable approval, and any escalation | Does the weight of evidence justify release, is the decision within delegated authority, and are all claims accurately constrained? |
 | Operations | Monitoring, regression, feedback, exception review, and improvement backlog | Is accessibility maintained as the service and its dependencies change? |
 
 The stages are not a rigid waterfall. A continuous-delivery team may run them repeatedly at different scopes. A procured-system team may perform many of them during evaluation, acceptance, renewal, and replacement. The control is that required evidence must exist before the relevant decision, regardless of the delivery method.
@@ -404,7 +436,7 @@ Assistive-technology evaluation must use declared combinations of platform, brow
 
 ### Evaluation with disabled people
 
-Research with disabled participants answers whether people can complete realistic tasks with acceptable effort, confidence, comprehension, and recovery. It does not replace technical testing, and participants should not be asked to act as conformance auditors. Research plans must define the decision question, recruitment rationale, access needs, consent, tasks, success measures, analysis, and how findings will influence delivery.
+Research with disabled participants answers whether people can complete realistic tasks and what the experience requires of them. Depending on the decision, measures may include success, time, effort, errors, recovery, confidence, comprehension, autonomy, privacy, equivalence, predictability, satisfaction, and service-relevant enjoyment. It does not replace technical testing, and participants should not be asked to act as conformance auditors or risk approvers. Research plans must define the decision question, recruitment rationale, access needs, consent, tasks, success measures, analysis, uncertainty, and how findings will influence delivery.
 
 ### Selection method
 
@@ -431,8 +463,9 @@ Record the test identity, purpose, preconditions, steps, expected result, actual
 ### Release activities
 
 - Produce an accessibility test report that states the decision purpose, scope, exclusions, repository version, product build, environments, components, journeys, states, test methods, results, limitations, and dates.
-- Confirm that every in-scope requirement has sufficient evidence, an owned defect, or an approved exception.
-- Review user impact, affected tasks, reach, frequency, workaround, detectability, persistence, and compounding barriers; do not prioritise only from a tool's severity label.
+- Confirm that every in-scope requirement has sufficient evidence, an owned defect, an approved time-bound exception, or an approved evidence-based departure.
+- Review user impact, affected tasks, reach, frequency, workaround, detectability, persistence, compounding barriers, autonomy, privacy, equivalence, expectation, satisfaction, and any service-relevant experiential outcome; do not prioritise only from a tool's severity label.
+- Confirm that the proposed approver has documented authority for the risk level and that every escalation trigger in ATLF-04 has been considered.
 - Restrict claims to what the evidence supports. Sampled evidence cannot justify an unrestricted claim about every page, state, platform, or user.
 - Archive evidence so the decision can be reconstructed.
 
@@ -446,15 +479,18 @@ Record the test identity, purpose, preconditions, steps, expected result, actual
 
 ### Operations activities
 
-- Transfer unresolved defects and exceptions with impact, priority, owner, target date, and evidence.
+- Transfer unresolved defects, exceptions, and baseline departures with impact, priority or decision status, owner, target or review date, monitoring, and evidence.
 - Re-run proportionate regression after changes to shared components, tokens, content templates, dependencies, platforms, or rule versions.
 - Monitor feedback, complaints, support contacts, defects, and production changes for signals that planned coverage missed a barrier.
 - Review exceptions before expiry; an expired exception becomes an unresolved decision, not an automatic renewal.
+- Reassess evidence-based departures at their review date and whenever a defined trigger occurs; prior approval is not proof that the alternative continues to produce an equal or better outcome.
 - Update patterns, components, tests, training, and requirements when evidence identifies a repeated cause.
 
 ### Release decision rule
 
-Release readiness is based on the weight and quality of evidence, not a single audit score. A release may require delay even when automated checks pass, and it may sometimes proceed with a documented low-impact limitation when accountability, remediation, and communication are adequate. The decision must be explicit and reviewable.
+Release readiness is based on the weight and quality of evidence, not a single audit score or standards result. A release may require delay even when automated checks or a technical conformance review pass. It may sometimes proceed with a documented limitation or an evidence-based departure from a baseline when the conditions in ATLF-04 are met.
+
+The product or service owner recommends the treatment of unresolved issues. The business or service accountable owner accepts release risk only within documented delegated authority. An executive or enterprise-risk authority decides matters above that threshold. The decision must be explicit, reviewable, time-bound where it creates an exception, and accurately separated from any claim of conformance.
 
 **Repository source:** [Test Management Approach](Testing_Approach.md).
 
@@ -561,8 +597,9 @@ Do not place requirements, tests, tool rules, execution results, and defects in 
 | Automated implementation | implementation ID; test reference; analyser or assertion; rule ID where relevant; code location; target state; pipeline stage; owner; version |
 | Execution | execution ID; build; source and implementation versions; environment; date; tester or runner; actual result; confidence; evidence location |
 | Issue | issue ID; failed outcome; user impact; affected scope; cause; owner; priority; remediation; status; retest links |
-| Exception | exception ID; requirement and issue links; rationale; impact; compensating action; approver; approval date; expiry; review status |
-| Release decision | release ID; evidence set; open issues; exceptions; limitations; decision; approver; date; operational handover |
+| Exception | exception ID; requirement, issue, and baseline links; service context and rationale; affected users and tasks; evidence and uncertainty; alternatives considered; residual disadvantage; compensating action; monitoring signals; recommender; authorised approver and delegation basis; approval date; review triggers; review date; expiry; review status |
+| Baseline departure | departure ID; requirement and baseline links; service context and rationale; affected users and tasks; equal-or-better-outcome evidence and uncertainty; alternatives considered; standards result and permitted claims; monitoring signals; recommender; authorised approver and delegation basis; approval date; review triggers; review date; status |
+| Release decision | release ID; evidence set; open issues; exceptions; departures; limitations; decision; recommendation owner; authorised approver and delegation basis; escalation record where applicable; date; operational handover |
 
 ### Identifier rules
 
@@ -578,7 +615,7 @@ Use explicit relationships: `implements`, `evaluates`, `supports`, `partially co
 
 ### Orphan checks
 
-Automated governance checks should identify requirements without validation, tests without purpose, automated implementations without source tests, executions without version data, issues without owners, exceptions without expiry, and release decisions without a complete evidence set.
+Automated governance checks should identify requirements without validation, tests without purpose, automated implementations without source tests, executions without version data, issues without owners, exceptions without an authorised approver, delegation basis, monitoring, review date, or expiry, departures without equal-or-better-outcome evidence, claim limits, monitoring, or review, and release decisions without a complete evidence set.
 
 **Repository sources:** [Canonical Test Library](<Canonical Test Library.md>); [Canonical Test Library Alignment to Exact WCAG SC IDs](<Canonical Test Library Alignment to Exact WCAG SC IDs.md>); [Canonical Test Inventory: token dependencies and bi-directional component mapping](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>).
 
@@ -642,9 +679,9 @@ Confidence should reflect coverage breadth, environment fidelity, repeatability,
 | Design ready | Design-system and token dependency checks where available | Pattern, content, state, responsive, and interaction review | Material behaviour and content are specified in testable form. |
 | Architecture ready | Prototype or component checks where feasible | Architecture, focus, semantics, integration, and testability review | Component contracts, state model, environments, and risks are recorded. |
 | Engineering complete | Stable component and journey assertions plus declared analyser checks | Developer keyboard and targeted assistive-technology smoke checks | Implementation evidence exists and known limitations are explicit. |
-| Integrated verification complete | Agreed regression profile executed with no unreviewed tool states | Planned manual, assistive-technology, specialist, and user evaluation complete | Every in-scope outcome has sufficient evidence, an issue, or an approved exception. |
-| Release ready | Versioned results and evidence bundle complete | Residual-risk and claim review complete | Accountable owner records a release decision and operational handover. |
-| Operationally controlled | Scheduled and change-triggered checks run | Feedback, incidents, and exception expiry reviewed | New evidence is triaged and improvement work is owned. |
+| Integrated verification complete | Agreed regression profile executed with no unreviewed tool states | Planned manual, assistive-technology, specialist, and user evaluation complete | Every in-scope outcome has sufficient evidence, an issue, an approved time-bound exception, or an approved evidence-based departure. |
+| Release ready | Versioned results and evidence bundle complete | Residual-risk, user-outcome, delegation, escalation, and claim review complete | The business or service accountable owner records a release decision within delegated authority, or the executive or enterprise-risk authority records an above-threshold decision, followed by operational handover. |
+| Operationally controlled | Scheduled and change-triggered checks run | Feedback, incidents, exception expiry, and baseline-departure evidence reviewed | New evidence is triaged and improvement work is owned. |
 
 ### Stop conditions
 
@@ -655,8 +692,10 @@ Work should not pass a gate when:
 - automation failed and the missing evidence was silently treated as a pass;
 - a manual-primary outcome was represented only by an automated proxy;
 - a material supplier claim cannot be reconciled with observed behaviour;
-- a high-impact issue lacks an accountable decision;
-- an exception has no owner, compensating action, review date, or expiry;
+- a high-impact issue lacks a decision by the authorised accountable or escalation authority;
+- an exception has no evidence record, authorised approver, delegation basis, owner, compensating action, monitoring, review date, or expiry;
+- an evidence-based departure has no equal-or-better-outcome evidence, authorised approver, delegation basis, claim limits, monitoring, or review date;
+- a departure is being represented as conformance when the relevant conformance rules do not permit that claim;
 - the evidence cannot be traced to the tested product and repository versions.
 
 ### Completion principle
@@ -683,9 +722,9 @@ Completion is not a predetermined count. It is the point at which all applicable
 | Automation profile | Rule and assertion scope, states, versions, reporting, error handling, exclusions, and exception controls are declared and demonstrated. |
 | Manual and assistive-technology plan | Journeys, states, environments, technologies, competence, sampling, evidence, and escalation are defined and resourced. |
 | User evaluation plan | Decision question, participant rationale, access needs, tasks, success measures, ethics, analysis, and action route are defined where required. |
-| Evidence and result schema | Results preserve source, environment, version, actual observation, confidence, issue, exception, and retest links. |
-| Accessibility test report | Scope, methods, coverage, results, limitations, issues, exceptions, release recommendation, approval, and handover are reconstructable. |
-| Governance model | Owners and decision rights exist for tests, mappings, upgrades, failures, risk acceptance, suppliers, and operations. |
+| Evidence and result schema | Results preserve source, environment, version, actual observation, confidence, issue, exception, baseline-departure, decision, and retest links. |
+| Accessibility test report | Scope, methods, coverage, results, limitations, issues, exceptions, release recommendation, delegation or escalation basis, approval, claims, and handover are reconstructable. |
+| Governance model | Owners, delegation thresholds, escalation triggers, and decision rights exist for tests, mappings, upgrades, failures, risk acceptance, evidence-based departures, suppliers, and operations. |
 | Improvement backlog | Repeated causes are routed to components, tokens, patterns, content rules, test infrastructure, or capability development. |
 
 ### Framework implementation is complete when
@@ -694,7 +733,7 @@ Completion is not a predetermined count. It is the point at which all applicable
 - the organisation can distinguish the two repository test number spaces and the AXE rule namespace;
 - the traceability model produces no unexplained critical orphans;
 - automated and human evidence can be reviewed together without losing their different meanings;
-- release and exception decisions have been tested in practice;
+- release, exception, and baseline-departure decisions have been tested in practice;
 - owners have accepted repository update, crosswalk, automation, training, and evidence-retention responsibilities.
 
 ---
@@ -714,7 +753,7 @@ Completion is not a predetermined count. It is the point at which all applicable
 | 5. Pilot | Apply the complete model to a representative service with dynamic states, forms, responsive behaviour, and at least one integration. | Evidence of effort, coverage, defects, decision quality, and lessons. |
 | 6. Improve | Correct crosswalks, procedures, components, tokens, reports, training, and ownership based on pilot evidence. | Approved operating version of the framework. |
 | 7. Scale | Roll out by product risk, reuse shared tests and components, and monitor consistency. | Sustainable portfolio or service-line adoption. |
-| 8. Operate | Review repository changes, analyser changes, regression, user feedback, supplier evidence, and exception expiry. | Continuous, versioned improvement. |
+| 8. Operate | Review repository changes, analyser changes, regression, user feedback, supplier evidence, exception expiry, and baseline-departure evidence. | Continuous, versioned improvement. |
 
 ### Pilot selection
 
@@ -744,9 +783,10 @@ Do not begin by automating the largest possible set of rules. First establish th
 | Escape and recurrence | Barriers first found after release and repeated causes linked to shared patterns or components. |
 | Evidence quality | Results with sufficient environment, version, observation, and traceability data. |
 | Manual plan health | Planned versus completed manual and assistive-technology work, blocked tests, and capacity constraints. |
-| Exception health | Number, impact, age, owner, compensating action, and expiry status of exceptions. |
+| Exception health | Number, impact, age, affected users, decision tier, delegation basis, owner, compensating action, monitoring, review, renewal, and expiry status of exceptions. |
+| Baseline-departure health | Number, scope, age, affected users, decision tier, delegation basis, evidence confidence, claim limits, monitoring, review status, and outcomes after approval. |
 | Remediation effectiveness | Time to resolution, retest success, recurrence, and whether the cause was corrected upstream. |
-| User outcome | Task completion, time, effort, errors, recovery, confidence, and qualitative experience for disabled participants where measured. |
+| User outcome | Task completion, time, effort, errors, recovery, autonomy, privacy, equivalence, predictability, confidence, satisfaction, and service-relevant enjoyment for disabled participants where measured. |
 | Repository health | Ambiguous references, orphan tests, stale mappings, duplicated implementations, and version drift. |
 
 ### Principal risks and controls
@@ -759,7 +799,8 @@ Do not begin by automating the largest possible set of rules. First establish th
 | Manual evaluation becomes a late bottleneck | Estimate skill and capacity during mobilisation and distribute testing across delivery. |
 | Results cannot be reproduced | Preserve versions, environments, steps, observations, and evidence. |
 | Supplier evidence is accepted without challenge | Independently test critical workflows and reconcile claims with observed behaviour. |
-| Exceptions become permanent | Require approval, compensating action, review, and expiry. |
+| Exceptions become permanent or bypass delegated authority | Require an authorised approver, recorded delegation basis, compensating action, monitoring, review triggers, and expiry; escalate renewals and above-threshold risks. |
+| User research is used to erase a known standards failure | Record the standards result separately, test the alternative against broader user outcomes, disclose uncertainty, and constrain conformance claims. |
 | Fixes recur across products | Route root causes to shared tokens, components, patterns, and content models. |
 | LLM retrieval merges identifiers or overstates mappings | Use chunk IDs, namespaces, exact titles, relationship types, and source versions. |
 
@@ -770,7 +811,9 @@ Do not begin by automating the largest possible set of rules. First establish th
 - What can automation determine reliably, and what judgement remains?
 - Are the tested states and environments representative?
 - What is not covered, and could that omission change the decision?
-- Is the result about conformance, usability, equivalence, or all three?
+- Is the result about conformance, usability, autonomy, equivalence, satisfaction, or another service outcome, and have those conclusions been kept distinct?
+- Is the proposed decision within the approver's documented authority, or must it be escalated?
+- Does evidence for a departure include the users most likely to be disadvantaged, including rare but severe cases and people missing from the sample?
 - Are repeated failures being fixed at source?
 - Does the release claim say more than the evidence supports?
 
@@ -824,6 +867,8 @@ When an LLM uses this framework and the repository:
 8. State missing evidence and uncertainty. Use `cannot tell`, `not tested`, `blocked`, or `tool error` rather than inventing a pass.
 9. Generate test plans from applicable outcomes, assets, states, journeys, environments, and risk; do not select every repository test by default.
 10. Cite only repository files when explaining this framework. Do not introduce an external document as an authority unless the user explicitly expands the source boundary.
+11. Treat WCAG and other target profiles as governed baselines and evidence sources, not as complete measures of experience. Keep technical conformance, usability, autonomy, equivalence, satisfaction, and service-relevant enjoyment as distinct findings.
+12. Do not recommend or approve an exception. Identify the required evidence, delegation tier, escalation triggers, uncertainty, compensating action, review, expiry, and human decision-maker defined in ATLF-04.
 
 ### Minimum generated-test format
 
