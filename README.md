@@ -60,6 +60,8 @@ These rules apply to every retrieval, analysis, edit, and generated artefact.
 12. **Never make an unrestricted accessibility claim from sampled evidence.** State scope, environments, versions, exclusions, and limitations.
 13. **Keep exceptions and departures separate.** An exception accepts a known unresolved failure or residual disadvantage. A baseline departure selects a different approach supported by equal-or-better-outcome evidence where applicable obligations permit it. Neither silently changes a standards result.
 14. **Do not determine legal applicability from a test result.** EAA scope, legal limitations and requirement conclusions belong to the relevant canonical governance layers.
+15. **Use only WCAG 2.2 A and AA in the canonical standards register.** Stronger, broader, AAA-derived or otherwise non-equivalent requirements remain highly recommended best practices and must not be reported as WCAG A/AA failures.
+16. **Do not use the superseded “Exact WCAG” table.** Use the normalized WCAG A/AA relationship register for standards traceability and its generated summary for a test-level view.
 
 ---
 
@@ -72,7 +74,9 @@ There is no single linear hierarchy for all questions. Use the file that is auth
 | [Accessibility Test-Led Delivery Framework](Accessibility_Test_Led_Delivery_Framework.md) | Operating framework for lifecycle, governance, evidence, gates, adoption, and LLM behaviour. | Managing the end-to-end system or deciding how evidence affects delivery. |
 | [Test Management Approach](Testing_Approach.md) | Testing philosophy covering layers, conformance versus usability, ownership, evidence, procurement, release, and continuous improvement. | Interpreting why different kinds of testing are required. |
 | [Canonical Test Library](<Canonical Test Library.md>) | 200 numbered, outcome-based canonical tests grouped into ten domains. | Selecting stable accessibility outcomes and user behaviours. |
-| [Canonical Test Library Alignment to Exact WCAG SC IDs](<Canonical Test Library Alignment to Exact WCAG SC IDs.md>) | One-by-one mapping of canonical tests to POUR and WCAG success-criterion identifiers. | Building standards traceability from a selected canonical outcome. |
+| [Canonical WCAG 2.2 A and AA Relationship Register](Canonical_WCAG_AA_Relationship_Register.md) | Canonical normalized relationship records with one row per test-to-criterion relationship, level, relationship type, classification and scope note. | Building or interpreting WCAG 2.2 A/AA standards traceability. |
+| [Canonical Test Library — WCAG 2.2 A and AA Summary](Canonical_Test_Library_WCAG_AA_Summary.md) | Generated one-row-per-test view of A/AA relationships and highly recommended best-practice classifications. | Human review, test selection and reporting summaries. |
+| [Superseded Exact WCAG Alignment](<Canonical Test Library Alignment to Exact WCAG SC IDs.md>) | Redirect retained for historical links. | Do not use for current mapping or conformance reporting. |
 | [Canonical Test Inventory: token dependencies and bi-directional component mapping](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>) | Test-to-component, test-to-token, and component-to-test mappings. | Assessing likely design-system impact or regression scope. |
 | [Mobile Application and Website Test Library](Mobile_Application_and_Website_Test_Library.md) | 432 numbered detailed test entries with requirements and supported user behaviour. | Adding detailed web or mobile test coverage. |
 | [Accessibility ACT-Style Test System](Accessibility_ACT-Style_Test_System.md) | Repeatable procedures for patterns, practices, and cross-cutting interpretation. | Generating or executing structured pattern-level tests. |
@@ -87,7 +91,8 @@ There is no single linear hierarchy for all questions. Use the file that is auth
 - For lifecycle and governance, follow the **Accessibility Test-Led Delivery Framework**.
 - For stable user outcomes, use the **Canonical Test Library**.
 - For a canonical test's exact title, number, requirement, and user behaviour, the **Canonical Test Library** is authoritative.
-- For WCAG mappings, use the **Canonical Test Library Alignment** and flag suspected errors for human review rather than silently rewriting them.
+- For WCAG mappings, use the **Canonical WCAG 2.2 A and AA Relationship Register**. Treat its generated summary as a view, not an independent authority.
+- Keep highly recommended best practices active in the test library while reporting their results separately from WCAG A/AA conformance.
 - For procedural detail, use the **Mobile Application and Website Test Library** and **Accessibility ACT-Style Test System**.
 - For automation suitability, use the **Automated-to-Manual Cross-Reference** and relevant AXE alignment files.
 - For actual product behaviour, execution evidence overrides an assumed mapping. Record the discrepancy and propose a repository update.
@@ -118,7 +123,7 @@ Do not preload every test entry when a narrow lookup will answer the question. D
 |---|---|---|
 | Explain the framework | Framework `ATLF-01`, `ATLF-02`, and `ATLF-05` | Testing Approach |
 | Create a product test profile | Framework `ATLF-06`, `ATLF-11`, and `ATLF-13` | Canonical Library; detailed and ACT-style libraries |
-| Map requirements to WCAG | Canonical Library | Canonical WCAG Alignment; framework `ATLF-13` |
+| Map requirements to WCAG | Canonical Library | Canonical WCAG A/AA Relationship Register; generated summary; framework `ATLF-13` |
 | Identify component or token impact | Canonical component/token mapping | Canonical Library; AXE component/token mapping if an AXE rule is involved |
 | Decide automated versus manual coverage | Automated-to-Manual Cross-Reference | AXE Alignment; framework `ATLF-09` and `ATLF-12` |
 | Generate a pattern test | ACT-Style Test System | Canonical Library; detailed library; Testing Approach |
@@ -320,7 +325,9 @@ Run relevant checks after every change. A full consistency review should run all
 
 ### Mapping checks
 
-- Every row in the Canonical WCAG Alignment refers to an existing canonical test with the same number and title.
+- Every row in the canonical WCAG A/AA relationship register refers to an existing canonical test with the same number and title.
+- Every relationship-register criterion is WCAG 2.2 Level A or AA; no AAA criterion appears in the active register.
+- Every summary row agrees with the normalized register and retains highly recommended best-practice classifications.
 - Every canonical component/token mapping refers to an existing canonical test.
 - Component-to-test reverse mappings agree with the corresponding test-to-component mappings or record an explained exception.
 - Automated-to-manual rows refer to existing canonical tests and preserve exact titles.
@@ -354,8 +361,8 @@ When a file changes, review the listed dependants.
 |---|---|
 | Accessibility Test-Led Delivery Framework | README routing, chunk range, governance instructions, and any generated operating templates |
 | Test Management Approach | Framework lifecycle and evidence language; ACT-style interpretation; README authority rules |
-| Canonical Test Library | WCAG Alignment; component/token mapping; automated-to-manual cross-reference; AXE alignment; README counts and examples |
-| Canonical WCAG Alignment | Standards traceability outputs and any product profiles using affected canonical tests |
+| Canonical Test Library | WCAG A/AA relationship register and summary; component/token mapping; automated-to-manual cross-reference; AXE alignment; README counts and examples |
+| Canonical WCAG A/AA Relationship Register | Generated WCAG summary, standards traceability outputs and product profiles using affected canonical tests |
 | Canonical component/token mapping | Reverse mappings, design-system impact analysis, regression profiles, and AXE component/token mapping where concepts overlap |
 | Mobile Application and Website Test Library | README counts, crosswalks, detailed test profiles, and generated procedures |
 | Accessibility ACT-Style Test System | Pattern routing, generated test templates, and any local executable procedures derived from it |

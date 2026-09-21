@@ -22,6 +22,8 @@ retrieval_notes:
   - "Do not treat automated coverage as proof of accessibility or conformance."
   - "Do not merge the 200-item canonical library and the 432-item detailed library without an approved crosswalk."
   - "Treat WCAG and other target profiles as governed baselines and evidence sources, not as the complete definition of user experience."
+  - "Use the canonical WCAG 2.2 A and AA relationship register; do not use the superseded Exact WCAG alignment table."
+  - "Report highly recommended best-practice results separately from WCAG A/AA conformance."
 ---
 
 # Accessibility Test-Led Delivery Framework
@@ -152,7 +154,9 @@ The repository is a set of related layers rather than one flat checklist.
 |---|---|---|
 | [Test Management Approach](Testing_Approach.md) | Defines testing philosophy, evidence expectations, layers, governance, and release thinking. | It guides decisions; it is not an executable test inventory. |
 | [Canonical Test Library](<Canonical Test Library.md>) | Supplies 200 outcome-based requirements and supported user behaviours across ten domains. | Its numeric IDs are local to this library. |
-| [Canonical Test Library Alignment to Exact WCAG SC IDs](<Canonical Test Library Alignment to Exact WCAG SC IDs.md>) | Maps the 200 canonical tests to POUR and WCAG success-criterion identifiers. | A mapping supports traceability; it does not prove that a test fully evaluates every mapped criterion. |
+| [Canonical WCAG 2.2 A and AA Relationship Register](Canonical_WCAG_AA_Relationship_Register.md) | Supplies the canonical normalized A/AA relationship records, classification and scope notes. | A direct relationship remains bounded by the criterion's complete conditions and exceptions; partial support and organisation policy are not equivalent to criterion conformance. |
+| [Canonical Test Library — WCAG 2.2 A and AA Summary](Canonical_Test_Library_WCAG_AA_Summary.md) | Supplies the generated one-row-per-test view and identifies highly recommended best practices. | It is a generated view; the normalized relationship register is authoritative. |
+| [Superseded Exact WCAG Alignment](<Canonical Test Library Alignment to Exact WCAG SC IDs.md>) | Retains historical link continuity. | Do not use it for current mapping or conformance reporting. |
 | [Canonical Test Inventory: token dependencies and bi-directional component mapping](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>) | Connects canonical tests to affected patterns, components, and inferred design-token dependencies in both directions. | Token and component dependencies are implementation inferences that must be validated against the product's design system. |
 | [Mobile Application and Website Test Library](Mobile_Application_and_Website_Test_Library.md) | Supplies 432 detailed test entries with requirements and supported user behaviour. | This is a separate number space and may overlap with the canonical library. |
 | [Accessibility ACT-Style Test System](Accessibility_ACT-Style_Test_System.md) | Supplies repeatable pattern and design-practice procedures with objectives, setup, steps, expected outcomes, and interpretation. | Pattern tests complement rather than replace journey testing. |
@@ -323,7 +327,7 @@ A requirement is ready when:
 - test gaps and assumptions register;
 - Definition of Ready and Definition of Done criteria.
 
-**Repository sources:** [Canonical Test Library](<Canonical Test Library.md>); [Canonical Test Library Alignment to Exact WCAG SC IDs](<Canonical Test Library Alignment to Exact WCAG SC IDs.md>); [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>).
+**Repository sources:** [Canonical Test Library](<Canonical Test Library.md>); [Canonical WCAG 2.2 A and AA Relationship Register](Canonical_WCAG_AA_Relationship_Register.md); [Canonical Test Library — WCAG 2.2 A and AA Summary](Canonical_Test_Library_WCAG_AA_Summary.md); [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>).
 
 ---
 
@@ -617,7 +621,7 @@ Use explicit relationships: `implements`, `evaluates`, `supports`, `partially co
 
 Automated governance checks should identify requirements without validation, tests without purpose, automated implementations without source tests, executions without version data, issues without owners, exceptions without an authorised approver, delegation basis, monitoring, review date, or expiry, departures without equal-or-better-outcome evidence, claim limits, monitoring, or review, and release decisions without a complete evidence set.
 
-**Repository sources:** [Canonical Test Library](<Canonical Test Library.md>); [Canonical Test Library Alignment to Exact WCAG SC IDs](<Canonical Test Library Alignment to Exact WCAG SC IDs.md>); [Canonical Test Inventory: token dependencies and bi-directional component mapping](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>).
+**Repository sources:** [Canonical Test Library](<Canonical Test Library.md>); [Canonical WCAG 2.2 A and AA Relationship Register](Canonical_WCAG_AA_Relationship_Register.md); [Canonical Test Library — WCAG 2.2 A and AA Summary](Canonical_Test_Library_WCAG_AA_Summary.md); [Canonical Test Inventory: token dependencies and bi-directional component mapping](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>).
 
 ---
 
@@ -831,15 +835,17 @@ This framework references only the following repository files:
 
 1. [Testing_Approach.md](Testing_Approach.md) — management principles, testing layers, evidence, governance, release, procurement, and LLM reasoning guidance.
 2. [Canonical Test Library.md](<Canonical Test Library.md>) — 200 numbered canonical outcomes and supported user behaviours.
-3. [Canonical Test Library Alignment to Exact WCAG SC IDs.md](<Canonical Test Library Alignment to Exact WCAG SC IDs.md>) — one-by-one canonical test mapping to POUR and WCAG success-criterion identifiers.
-4. [Canonical Test Inventory: token dependencies and bi-directional component mapping.md](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>) — test, component, pattern, and token dependency mappings.
-5. [Mobile_Application_and_Website_Test_Library.md](Mobile_Application_and_Website_Test_Library.md) — 432 numbered detailed web and mobile test entries.
-6. [Accessibility_ACT-Style_Test_System.md](Accessibility_ACT-Style_Test_System.md) — repeatable pattern, practice, and cross-cutting interpretation tests.
-7. [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>) — direct, partial, and unevidenced automation coverage plus manual complements for the 200 canonical tests.
-8. [AXE_Test_AA_Rule_Descriptions.md](AXE_Test_AA_Rule_Descriptions.md) — AXE rule descriptions and mappings used by the repository.
-9. [AXE_and _Test_Inventory_Alignment.md](<AXE_and _Test_Inventory_Alignment.md>) — AXE-to-canonical alignment and manual work needed for conclusive results.
-10. [AXE_Test_Remediation_Prompt_Library.md](AXE_Test_Remediation_Prompt_Library.md) — structured prompts for investigating and remediating AXE findings.
-11. [AXE → Design Tokens → Components.md](<AXE → Design Tokens → Components.md>) — AXE, design-token, component, and pattern mappings.
+3. [Canonical_WCAG_AA_Relationship_Register.md](Canonical_WCAG_AA_Relationship_Register.md) — canonical normalized mapping to WCAG 2.2 A/AA with relationship type, classification and scope note.
+4. [Canonical_Test_Library_WCAG_AA_Summary.md](Canonical_Test_Library_WCAG_AA_Summary.md) — generated one-row-per-test standards and best-practice summary.
+5. [Canonical Test Inventory: token dependencies and bi-directional component mapping.md](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>) — test, component, pattern, and token dependency mappings.
+6. [Mobile_Application_and_Website_Test_Library.md](Mobile_Application_and_Website_Test_Library.md) — 432 numbered detailed web and mobile test entries.
+7. [Accessibility_ACT-Style_Test_System.md](Accessibility_ACT-Style_Test_System.md) — repeatable pattern, practice, and cross-cutting interpretation tests.
+8. [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>) — direct, partial, and unevidenced automation coverage plus manual complements for the 200 canonical tests.
+9. [AXE_Test_AA_Rule_Descriptions.md](AXE_Test_AA_Rule_Descriptions.md) — AXE rule descriptions and mappings used by the repository.
+10. [AXE_and _Test_Inventory_Alignment.md](<AXE_and _Test_Inventory_Alignment.md>) — AXE-to-canonical alignment and manual work needed for conclusive results.
+11. [AXE_Test_Remediation_Prompt_Library.md](AXE_Test_Remediation_Prompt_Library.md) — structured prompts for investigating and remediating AXE findings.
+12. [AXE → Design Tokens → Components.md](<AXE → Design Tokens → Components.md>) — AXE, design-token, component, and pattern mappings.
+13. [Canonical Test Library Alignment to Exact WCAG SC IDs.md](<Canonical Test Library Alignment to Exact WCAG SC IDs.md>) — superseded redirect retained only for historical link continuity.
 
 ### Provenance and maintenance
 

@@ -1,3 +1,30 @@
+---
+title: "Canonical Test Library"
+version: "1.1"
+date: "2026-09-20"
+status: "Canonical repository requirement and outcome library"
+authority_type: "Double FW accessibility requirements and highly recommended inclusive-design practices"
+wcag_target: "WCAG 2.2 Levels A and AA only"
+normative_boundary:
+  - "The requirements in this library are repository requirements, not quotations or automatic restatements of WCAG."
+  - "Only relationships classified in Canonical_WCAG_AA_Relationship_Register.md may be used for WCAG 2.2 A/AA traceability."
+  - "Requirements without direct A/AA equivalence remain highly recommended best practices and must not be reported as WCAG failures."
+  - "WCAG is a minimum technical baseline and does not define every inclusive-design or user-outcome requirement in this library."
+ai_ingestion_guidance:
+  - "Preserve each canonical test ID, title, requirement and supported user behaviour."
+  - "Do not infer WCAG applicability or conformance from similar wording."
+  - "Retrieve the WCAG A/AA relationship register before making a standards claim."
+  - "Keep repository-test results, WCAG results and broader inclusive-design findings separate."
+---
+
+# Canonical Test Library
+
+This library contains 200 stable accessibility and inclusive-design requirements. Some directly express or substantially align with WCAG 2.2 Level A or AA requirements. Others extend beyond WCAG, operationalise a broader outcome, or address an area that WCAG does not fully cover. Those requirements are retained as **highly recommended best practices**.
+
+The word `must` expresses the repository's canonical requirement. It does not mean that the requirement is mandated by WCAG. Use the [Canonical WCAG 2.2 A and AA Relationship Register](Canonical_WCAG_AA_Relationship_Register.md) to determine the standards relationship and the [WCAG A and AA Summary](Canonical_Test_Library_WCAG_AA_Summary.md) for a test-level view.
+
+A failure of a highly recommended best practice is a repository or organisational-policy finding, not automatically a WCAG failure. Conversely, a pass against one canonical test does not establish complete conformance with a mapped success criterion.
+
 A. Perception, presentation, and sensory independence
 
 1. Information Not Conveyed by Colour Alone
@@ -772,7 +799,9 @@ Users with limited dexterity can interact successfully.
 110. Target Size Meets Minimum Usability Threshold
 
 Requirement
-Interactive targets must be large enough for touch and motor accessibility.
+Interactive targets must meet WCAG 2.2 Success Criterion 2.5.8 Target Size (Minimum), including its 24 CSS pixel size-or-spacing condition and stated exceptions.
+Highly recommended best practice
+Where the interface and task permit, provide larger targets approaching or meeting the 44 by 44 CSS pixel enhanced target size. This extension is not part of the WCAG 2.2 AA requirement.
 Supported user behaviour
 Users can activate targets accurately.
 
