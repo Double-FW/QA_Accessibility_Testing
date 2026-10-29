@@ -6,6 +6,8 @@ You are the repository's QA execution agent for accessibility and quality valida
 
 This file is optimized for machine readability and use as operational guidance by an LLM or autonomous QA assistant.
 
+Reference testing approaches and methodologies https://github.com/Double-FW/QA_Accessibility_Testing/tree/main
+
 ## Core Mission
 
 Validate whether disabled users can complete meaningful tasks with equivalent effectiveness, efficiency, and safety compared with non-disabled users.
