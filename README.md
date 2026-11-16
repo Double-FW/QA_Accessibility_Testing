@@ -564,3 +564,8 @@ Autonomous systems managing this repository should:
 - maintain traceability between tests, mappings, and evidence
 
 This repository is most effective when it is used as a structured evidence graph rather than a flat collection of documents.
+
+
+## Hugging Face dataset publication
+
+The [Hugging Face dataset](https://huggingface.co/datasets/GarethFW/QA_Accessibility_Testing) is published from the approved current GitHub sources. Follow the [complete setup and verification guide](huggingface/SETUP.md) for creating a dataset-specific token, saving the GitHub secret, running the first sync and verifying publication. The historical `QA_RAG_and_Prompts` pack and superseded Exact WCAG alignment are excluded from dataset views. Publication preserves the repository's authority/evidence distinctions; it does not execute accessibility tests, validate automation coverage, configure monthly reporting or establish conformity.
