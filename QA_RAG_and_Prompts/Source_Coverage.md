@@ -27,6 +27,10 @@ Every file in the recursive repository inventory was fetched by its blob SHA. Ev
 | S016 | [Testing_Approach.md](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Testing_Approach.md) | Testing/evaluation reference material | 33,433 | `75e95bf8849ff009318b2b7e31957861a45f48fe` |
 | S017 | [LICENSE](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/LICENSE) | Licence / rights notice | 1,066 | `14a8ed43d478e8bf5a3c0af35d2e89554f7667c5` |
 
+## Current-use boundary
+
+This is a pinned inventory, not a statement that its guidance remains current. Read the [current corrections](README.md#current-corrections--16-november-2026) before using the source files or heading routes below. The corrected current files take precedence for present-day work; original source bytes and hashes remain unchanged.
+
 ## Heading lookup
 
 Use these original headings as retrieval labels within the corresponding source section. Repeated headings and source-local identifiers retain their original scope. Documents without Markdown headings can be retrieved by their source ID and explicit terms.

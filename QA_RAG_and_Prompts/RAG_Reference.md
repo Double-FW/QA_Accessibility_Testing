@@ -13,6 +13,14 @@ source_file_count: 17
 
 This reference contains the complete UTF-8 content of every tracked file in the inspected repository snapshot, including principles, policies, techniques, methods, tests, examples, references and supporting files. No source body has been abridged. Original bytes are also retained under `Sources/`; the coverage register records every blob and byte count. Attribution and rights notices remain part of the source, including any differing file-level notices.
 
+## Current corrections — 16 November 2026
+
+The 8 November source snapshot is historical. For present-day work, load the [current WCAG register](../Canonical_WCAG_AA_Relationship_Register.md), [derived summary](../Canonical_Test_Library_WCAG_AA_Summary.md), [automated/manual matrix](<../Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>), [testing approach](../Testing_Approach.md), [delivery framework](../Accessibility_Test_Led_Delivery_Framework.md), [mobile/web catalogue](../Mobile_Application_and_Website_Test_Library.md), [remediation prompts](../AXE_Test_Remediation_Prompt_Library.md) and [root index](../README.md).
+
+The corrections restore the AA focus-contrast relationship and its exceptions; withdraw unsubstantiated positive automation ratings in favour of U (unverified); require sufficient validation rather than automation for every requirement; clarify that the 432-entry library needs local procedures and has unknown originating provenance; separate text/non-text contrast thresholds and exceptions; and replace restricted/outdated supporting links with verified public guidance. Prior D/P ratings and the snapshot's CTL-010 classification must not be used as current evidence.
+
+Original source files and pinned hashes are retained under Sources/ for provenance. Recognised source-relative links in this combined reference are normalised to the pinned revision, including filenames containing spaces. Current-correction navigation does not alter the historical source files. The 17/17 coverage claim refers only to the pinned snapshot, not the current repository. If the current corrections are unavailable, identify the evidence gap and do not rely on the affected historical claims.
+
 ## How to use the reference
 
 Attach this file as context with a task prompt, or ingest its source sections into a retrieval system. This file is a knowledge resource; it does not itself implement search, retrieval, enforcement or validation. For a system with a limited context window, retrieve the relevant primary-source sections plus their applicability, evidence limits and governance context. Do not silently truncate long tables, examples or procedures. The activity guide maps common tasks to relevant sources. A source path and original heading, together with the snapshot revision, identify a passage more precisely than a page number.
@@ -118,12 +126,12 @@ The framework is grounded only in the documents and tests held in the [Double FW
 
 - Every H2 heading beginning `ATLF-` is a self-contained retrieval chunk.
 - A repository test must be cited as `library name + test number + test title`. For example, `Canonical Test Library, test 94, No Keyboard Trap` is unambiguous; `test 94` is not.
-- The [Canonical Test Library](<Canonical Test Library.md>) contains 200 numbered outcome-based tests. The [Mobile Application and Website Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Mobile_Application_and_Website_Test_Library.md) contains 432 numbered, more detailed test entries. Their number spaces are independent.
+- The [Canonical Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Library.md) contains 200 numbered outcome-based tests. The [Mobile Application and Website Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Mobile_Application_and_Website_Test_Library.md) contains 432 numbered, more detailed test entries. Their number spaces are independent.
 - `AXE rule ID` means an identifier in the repository's AXE artefacts. It is not a canonical test ID and must not be stored in the same field.
 - A link in this framework points only to a file in the repository or to the repository itself.
 - When a repository file and this framework differ in granularity, the repository file supplies the test detail; this framework supplies the delivery and governance context.
 
-**Repository sources:** [Canonical Test Library](<Canonical Test Library.md>); [Mobile Application and Website Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Mobile_Application_and_Website_Test_Library.md).
+**Repository sources:** [Canonical Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Library.md); [Mobile Application and Website Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Mobile_Application_and_Website_Test_Library.md).
 
 ---
 
@@ -153,7 +161,7 @@ The framework is deliberately tool-agnostic. The repository contains AXE-specifi
 
 The framework also avoids a misleading promise: not every accessibility outcome has a reliable automated assertion. The repository's automated-to-manual cross-reference explicitly classifies some canonical tests as having no evidenced automated coverage. The correct control is therefore that every in-scope requirement has a sufficient validation route, with automation used where it produces valid evidence.
 
-**Repository sources:** [Test Management Approach](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Testing_Approach.md); [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>).
+**Repository sources:** [Test Management Approach](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Testing_Approach.md); [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Automated-to-Manual%20Cross-Reference%20for%20the%20Canonical%20Accessibility%20Tests.md).
 
 ---
 
@@ -215,18 +223,18 @@ The repository is a set of related layers rather than one flat checklist.
 | Repository layer | Operational use | Important constraint |
 |---|---|---|
 | [Test Management Approach](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Testing_Approach.md) | Defines testing philosophy, evidence expectations, layers, governance, and release thinking. | It guides decisions; it is not an executable test inventory. |
-| [Canonical Test Library](<Canonical Test Library.md>) | Supplies 200 outcome-based requirements and supported user behaviours across ten domains. | Its numeric IDs are local to this library. |
+| [Canonical Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Library.md) | Supplies 200 outcome-based requirements and supported user behaviours across ten domains. | Its numeric IDs are local to this library. |
 | [Canonical WCAG 2.2 A and AA Relationship Register](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical_WCAG_AA_Relationship_Register.md) | Supplies the canonical normalized A/AA relationship records, classification and scope notes. | A direct relationship remains bounded by the criterion's complete conditions and exceptions; partial support and organisation policy are not equivalent to criterion conformance. |
 | [Canonical Test Library — WCAG 2.2 A and AA Summary](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical_Test_Library_WCAG_AA_Summary.md) | Supplies the generated one-row-per-test view and identifies highly recommended best practices. | It is a generated view; the normalized relationship register is authoritative. |
-| [Superseded Exact WCAG Alignment](<Canonical Test Library Alignment to Exact WCAG SC IDs.md>) | Retains historical link continuity. | Do not use it for current mapping or conformance reporting. |
-| [Canonical Test Inventory: token dependencies and bi-directional component mapping](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>) | Connects canonical tests to affected patterns, components, and inferred design-token dependencies in both directions. | Token and component dependencies are implementation inferences that must be validated against the product's design system. |
+| [Superseded Exact WCAG Alignment](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Library%20Alignment%20to%20Exact%20WCAG%20SC%20IDs.md) | Retains historical link continuity. | Do not use it for current mapping or conformance reporting. |
+| [Canonical Test Inventory: token dependencies and bi-directional component mapping](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Inventory%3A%20token%20dependencies%20and%20bi-directional%20component%20mapping.md) | Connects canonical tests to affected patterns, components, and inferred design-token dependencies in both directions. | Token and component dependencies are implementation inferences that must be validated against the product's design system. |
 | [Mobile Application and Website Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Mobile_Application_and_Website_Test_Library.md) | Supplies 432 detailed test entries with requirements and supported user behaviour. | This is a separate number space and may overlap with the canonical library. |
 | [Accessibility ACT-Style Test System](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Accessibility_ACT-Style_Test_System.md) | Supplies repeatable pattern and design-practice procedures with objectives, setup, steps, expected outcomes, and interpretation. | Pattern tests complement rather than replace journey testing. |
-| [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>) | Indicates direct, partial, or unevidenced automated coverage for each canonical test and identifies the needed manual complement. | Its `D`, `P`, and `N` ratings are analytical coverage indicators, not execution results. |
+| [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Automated-to-Manual%20Cross-Reference%20for%20the%20Canonical%20Accessibility%20Tests.md) | Indicates direct, partial, or unevidenced automated coverage for each canonical test and identifies the needed manual complement. | Its `D`, `P`, and `N` ratings are analytical coverage indicators, not execution results. |
 | [AXE Test AA Rule Descriptions](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE_Test_AA_Rule_Descriptions.md) | Provides AXE rule descriptions and associated mappings. | AXE rule IDs remain distinct from repository test IDs. |
-| [AXE and Test Inventory Alignment](<AXE_and _Test_Inventory_Alignment.md>) | Links AXE rules to related canonical areas and states whether manual work is needed for a conclusive result. | A related test is not necessarily a one-to-one or complete implementation mapping. |
+| [AXE and Test Inventory Alignment](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE_and%20_Test_Inventory_Alignment.md) | Links AXE rules to related canonical areas and states whether manual work is needed for a conclusive result. | A related test is not necessarily a one-to-one or complete implementation mapping. |
 | [AXE Test Remediation Prompt Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE_Test_Remediation_Prompt_Library.md) | Supports structured investigation and remediation after an AXE finding. | A remediation prompt is guidance, not proof that a fix is correct. |
-| [AXE → Design Tokens → Components](<AXE → Design Tokens → Components.md>) | Connects AXE rules, token dependencies, and components in both directions. | The mapping must be adapted to the actual component and token model. |
+| [AXE → Design Tokens → Components](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE%20%E2%86%92%20Design%20Tokens%20%E2%86%92%20Components.md) | Connects AXE rules, token dependencies, and components in both directions. | The mapping must be adapted to the actual component and token model. |
 
 ### Repository authority rule
 
@@ -339,7 +347,7 @@ Evidence should move in two directions:
 
 This feedback loop is the main advantage of test-led delivery. Testing does not merely detect defects; it changes the system that produces them.
 
-**Repository sources:** [Test Management Approach](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Testing_Approach.md); [Canonical Test Inventory: token dependencies and bi-directional component mapping](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>).
+**Repository sources:** [Test Management Approach](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Testing_Approach.md); [Canonical Test Inventory: token dependencies and bi-directional component mapping](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Inventory%3A%20token%20dependencies%20and%20bi-directional%20component%20mapping.md).
 
 ---
 
@@ -363,7 +371,7 @@ This feedback loop is the main advantage of test-led delivery. Testing does not 
 
 - Write each requirement as a user outcome rather than a tool rule or implementation instruction.
 - Record a stable requirement ID, title, statement, rationale, applicability, priority, owner, acceptance conditions, and version.
-- Start selection from the [Canonical Test Library](<Canonical Test Library.md>), then add procedural detail from the [Mobile Application and Website Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Mobile_Application_and_Website_Test_Library.md) or [Accessibility ACT-Style Test System](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Accessibility_ACT-Style_Test_System.md).
+- Start selection from the [Canonical Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Library.md), then add procedural detail from the [Mobile Application and Website Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Mobile_Application_and_Website_Test_Library.md) or [Accessibility ACT-Style Test System](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Accessibility_ACT-Style_Test_System.md).
 - Map the requirement to affected components, patterns, content types, states, and journeys using the repository's component and token mapping as an initial hypothesis.
 - Map the requirement to every relevant validation method. Do not force an automated method where the repository cross-reference indicates that reliable automated coverage is absent.
 - Put product-specific acceptance conditions into delivery work while preserving the link to the reusable requirement.
@@ -389,7 +397,7 @@ A requirement is ready when:
 - test gaps and assumptions register;
 - Definition of Ready and Definition of Done criteria.
 
-**Repository sources:** [Canonical Test Library](<Canonical Test Library.md>); [Canonical WCAG 2.2 A and AA Relationship Register](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical_WCAG_AA_Relationship_Register.md); [Canonical Test Library — WCAG 2.2 A and AA Summary](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical_Test_Library_WCAG_AA_Summary.md); [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>).
+**Repository sources:** [Canonical Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Library.md); [Canonical WCAG 2.2 A and AA Relationship Register](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical_WCAG_AA_Relationship_Register.md); [Canonical Test Library — WCAG 2.2 A and AA Summary](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical_Test_Library_WCAG_AA_Summary.md); [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Automated-to-Manual%20Cross-Reference%20for%20the%20Canonical%20Accessibility%20Tests.md).
 
 ---
 
@@ -413,8 +421,8 @@ A requirement is ready when:
 
 - Define component contracts for role, name, description, state, value, relationships, keyboard behaviour, focus entry and return, errors, status changes, and fallback behaviour.
 - Identify requirements that should be satisfied centrally through tokens, components, templates, navigation shells, content models, or platform services.
-- Use the [canonical component and token mapping](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>) to identify likely dependencies, then validate them against the actual system.
-- Use the [AXE-to-token-and-component mapping](<AXE → Design Tokens → Components.md>) when planning prevention and remediation for AXE-detectable conditions.
+- Use the [canonical component and token mapping](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Inventory%3A%20token%20dependencies%20and%20bi-directional%20component%20mapping.md) to identify likely dependencies, then validate them against the actual system.
+- Use the [AXE-to-token-and-component mapping](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE%20%E2%86%92%20Design%20Tokens%20%E2%86%92%20Components.md) when planning prevention and remediation for AXE-detectable conditions.
 - Define representative states that automation must create before analysis. A scan of initial page load alone is not representative coverage.
 - Define the browser, operating system, viewport, device, input method, and assistive-technology combinations required by product risk.
 - Record third-party constraints, evidence, compensating measures, replacement options, and owners.
@@ -433,7 +441,7 @@ Architecture is ready when the team can explain how each high-priority outcome w
 - environment and assistive-technology matrix;
 - updated requirement-to-test mapping.
 
-**Repository sources:** [Accessibility ACT-Style Test System](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Accessibility_ACT-Style_Test_System.md); [Canonical Test Inventory: token dependencies and bi-directional component mapping](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>); [AXE → Design Tokens → Components](<AXE → Design Tokens → Components.md>).
+**Repository sources:** [Accessibility ACT-Style Test System](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Accessibility_ACT-Style_Test_System.md); [Canonical Test Inventory: token dependencies and bi-directional component mapping](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Inventory%3A%20token%20dependencies%20and%20bi-directional%20component%20mapping.md); [AXE → Design Tokens → Components](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE%20%E2%86%92%20Design%20Tokens%20%E2%86%92%20Components.md).
 
 ---
 
@@ -457,9 +465,9 @@ Architecture is ready when the team can explain how each high-priority outcome w
 ### Using the repository's AXE assets
 
 - Use [AXE Test AA Rule Descriptions](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE_Test_AA_Rule_Descriptions.md) to identify the rule's stated purpose and mapping.
-- Use [AXE and Test Inventory Alignment](<AXE_and _Test_Inventory_Alignment.md>) to determine the related canonical area and the human work needed for a conclusive result.
+- Use [AXE and Test Inventory Alignment](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE_and%20_Test_Inventory_Alignment.md) to determine the related canonical area and the human work needed for a conclusive result.
 - Use [AXE Test Remediation Prompt Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE_Test_Remediation_Prompt_Library.md) to structure investigation and candidate remediation.
-- Use [AXE → Design Tokens → Components](<AXE → Design Tokens → Components.md>) to identify upstream design-system dependencies and downstream regression targets.
+- Use [AXE → Design Tokens → Components](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE%20%E2%86%92%20Design%20Tokens%20%E2%86%92%20Components.md) to identify upstream design-system dependencies and downstream regression targets.
 
 ### Automation controls
 
@@ -506,7 +514,7 @@ Research with disabled participants answers whether people can complete realisti
 
 ### Selection method
 
-Use the `D`, `P`, and `N` classifications in the [automated-to-manual cross-reference](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>) as planning evidence:
+Use the `D`, `P`, and `N` classifications in the [automated-to-manual cross-reference](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Automated-to-Manual%20Cross-Reference%20for%20the%20Canonical%20Accessibility%20Tests.md) as planning evidence:
 
 - `D`: automation may directly evaluate part of the condition; confirm whether qualitative or cross-state judgement remains.
 - `P`: automation supports discovery or structure checking; human evaluation is needed for a conclusion.
@@ -516,7 +524,7 @@ Use the `D`, `P`, and `N` classifications in the [automated-to-manual cross-refe
 
 Record the test identity, purpose, preconditions, steps, expected result, actual result, environment, tester competence, date, evidence, issue, confidence, and retest outcome. A note such as “checked with a screen reader” is not reproducible evidence.
 
-**Repository sources:** [Test Management Approach](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Testing_Approach.md); [Accessibility ACT-Style Test System](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Accessibility_ACT-Style_Test_System.md); [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>).
+**Repository sources:** [Test Management Approach](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Testing_Approach.md); [Accessibility ACT-Style Test System](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Accessibility_ACT-Style_Test_System.md); [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Automated-to-Manual%20Cross-Reference%20for%20the%20Canonical%20Accessibility%20Tests.md).
 
 ---
 
@@ -571,10 +579,10 @@ The product or service owner recommends the treatment of unresolved issues. The 
 ### Selection sequence
 
 1. **State the decision.** Define whether the evidence will support design approval, development completion, regression, release, procurement, remediation closure, or research.
-2. **Identify outcomes.** Select applicable outcomes from the [Canonical Test Library](<Canonical Test Library.md>).
-3. **Identify affected assets.** Use the [component and token mapping](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>) to find components, patterns, and design-system dependencies.
+2. **Identify outcomes.** Select applicable outcomes from the [Canonical Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Library.md).
+3. **Identify affected assets.** Use the [component and token mapping](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Inventory%3A%20token%20dependencies%20and%20bi-directional%20component%20mapping.md) to find components, patterns, and design-system dependencies.
 4. **Add procedure.** Select detailed entries from the [Mobile Application and Website Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Mobile_Application_and_Website_Test_Library.md) and relevant pattern procedures from the [Accessibility ACT-Style Test System](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Accessibility_ACT-Style_Test_System.md).
-5. **Choose methods.** Use the [automated-to-manual cross-reference](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>) and AXE alignment artefacts to decide what automation can contribute and which human checks remain necessary.
+5. **Choose methods.** Use the [automated-to-manual cross-reference](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Automated-to-Manual%20Cross-Reference%20for%20the%20Canonical%20Accessibility%20Tests.md) and AXE alignment artefacts to decide what automation can contribute and which human checks remain necessary.
 6. **Define the test matrix.** Name the components, content types, states, journeys, platforms, inputs, assistive technologies, and user groups required by risk.
 7. **Check for gaps and duplication.** Record uncovered outcomes and redundant executions before work starts.
 
@@ -642,7 +650,7 @@ For AXE-supported checks, the automation process is:
 
 ### Repository use
 
-The [AXE Test AA Rule Descriptions](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE_Test_AA_Rule_Descriptions.md) explains the repository rule set. The [AXE and Test Inventory Alignment](<AXE_and _Test_Inventory_Alignment.md>) identifies related canonical areas and manual complements. The [AXE Test Remediation Prompt Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE_Test_Remediation_Prompt_Library.md) supports remediation reasoning. The [AXE-to-token-and-component mapping](<AXE → Design Tokens → Components.md>) supports prevention and regression selection.
+The [AXE Test AA Rule Descriptions](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE_Test_AA_Rule_Descriptions.md) explains the repository rule set. The [AXE and Test Inventory Alignment](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE_and%20_Test_Inventory_Alignment.md) identifies related canonical areas and manual complements. The [AXE Test Remediation Prompt Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE_Test_Remediation_Prompt_Library.md) supports remediation reasoning. The [AXE-to-token-and-component mapping](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE%20%E2%86%92%20Design%20Tokens%20%E2%86%92%20Components.md) supports prevention and regression selection.
 
 ---
 
@@ -683,7 +691,7 @@ Use explicit relationships: `implements`, `evaluates`, `supports`, `partially co
 
 Automated governance checks should identify requirements without validation, tests without purpose, automated implementations without source tests, executions without version data, issues without owners, exceptions without an authorised approver, delegation basis, monitoring, review date, or expiry, departures without equal-or-better-outcome evidence, claim limits, monitoring, or review, and release decisions without a complete evidence set.
 
-**Repository sources:** [Canonical Test Library](<Canonical Test Library.md>); [Canonical WCAG 2.2 A and AA Relationship Register](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical_WCAG_AA_Relationship_Register.md); [Canonical Test Library — WCAG 2.2 A and AA Summary](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical_Test_Library_WCAG_AA_Summary.md); [Canonical Test Inventory: token dependencies and bi-directional component mapping](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>).
+**Repository sources:** [Canonical Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Library.md); [Canonical WCAG 2.2 A and AA Relationship Register](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical_WCAG_AA_Relationship_Register.md); [Canonical Test Library — WCAG 2.2 A and AA Summary](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical_Test_Library_WCAG_AA_Summary.md); [Canonical Test Inventory: token dependencies and bi-directional component mapping](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Inventory%3A%20token%20dependencies%20and%20bi-directional%20component%20mapping.md).
 
 ---
 
@@ -829,7 +837,7 @@ Choose a service that is representative but bounded. It should contain several i
 
 Do not begin by automating the largest possible set of rules. First establish the outcome profile, state model, identifiers, evidence schema, and manual capacity. Automation built against an unreconciled inventory can increase activity while reducing confidence.
 
-**Repository sources:** [Test Management Approach](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Testing_Approach.md); [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>).
+**Repository sources:** [Test Management Approach](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Testing_Approach.md); [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Automated-to-Manual%20Cross-Reference%20for%20the%20Canonical%20Accessibility%20Tests.md).
 
 ---
 
@@ -896,18 +904,18 @@ Do not begin by automating the largest possible set of rules. First establish th
 This framework references only the following repository files:
 
 1. [Testing_Approach.md](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Testing_Approach.md) — management principles, testing layers, evidence, governance, release, procurement, and LLM reasoning guidance.
-2. [Canonical Test Library.md](<Canonical Test Library.md>) — 200 numbered canonical outcomes and supported user behaviours.
+2. [Canonical Test Library.md](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Library.md) — 200 numbered canonical outcomes and supported user behaviours.
 3. [Canonical_WCAG_AA_Relationship_Register.md](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical_WCAG_AA_Relationship_Register.md) — canonical normalized mapping to WCAG 2.2 A/AA with relationship type, classification and scope note.
 4. [Canonical_Test_Library_WCAG_AA_Summary.md](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical_Test_Library_WCAG_AA_Summary.md) — generated one-row-per-test standards and best-practice summary.
-5. [Canonical Test Inventory: token dependencies and bi-directional component mapping.md](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>) — test, component, pattern, and token dependency mappings.
+5. [Canonical Test Inventory: token dependencies and bi-directional component mapping.md](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Inventory%3A%20token%20dependencies%20and%20bi-directional%20component%20mapping.md) — test, component, pattern, and token dependency mappings.
 6. [Mobile_Application_and_Website_Test_Library.md](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Mobile_Application_and_Website_Test_Library.md) — 432 numbered detailed web and mobile test entries.
 7. [Accessibility_ACT-Style_Test_System.md](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Accessibility_ACT-Style_Test_System.md) — repeatable pattern, practice, and cross-cutting interpretation tests.
-8. [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>) — direct, partial, and unevidenced automation coverage plus manual complements for the 200 canonical tests.
+8. [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Automated-to-Manual%20Cross-Reference%20for%20the%20Canonical%20Accessibility%20Tests.md) — direct, partial, and unevidenced automation coverage plus manual complements for the 200 canonical tests.
 9. [AXE_Test_AA_Rule_Descriptions.md](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE_Test_AA_Rule_Descriptions.md) — AXE rule descriptions and mappings used by the repository.
-10. [AXE_and _Test_Inventory_Alignment.md](<AXE_and _Test_Inventory_Alignment.md>) — AXE-to-canonical alignment and manual work needed for conclusive results.
+10. [AXE_and _Test_Inventory_Alignment.md](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE_and%20_Test_Inventory_Alignment.md) — AXE-to-canonical alignment and manual work needed for conclusive results.
 11. [AXE_Test_Remediation_Prompt_Library.md](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE_Test_Remediation_Prompt_Library.md) — structured prompts for investigating and remediating AXE findings.
-12. [AXE → Design Tokens → Components.md](<AXE → Design Tokens → Components.md>) — AXE, design-token, component, and pattern mappings.
-13. [Canonical Test Library Alignment to Exact WCAG SC IDs.md](<Canonical Test Library Alignment to Exact WCAG SC IDs.md>) — superseded redirect retained only for historical link continuity.
+12. [AXE → Design Tokens → Components.md](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/AXE%20%E2%86%92%20Design%20Tokens%20%E2%86%92%20Components.md) — AXE, design-token, component, and pattern mappings.
+13. [Canonical Test Library Alignment to Exact WCAG SC IDs.md](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Library%20Alignment%20to%20Exact%20WCAG%20SC%20IDs.md) — superseded redirect retained only for historical link continuity.
 
 ### Provenance and maintenance
 
@@ -3800,7 +3808,7 @@ The former table described every association as an `Exact WCAG SC ID`. That was 
 
 - [Canonical WCAG 2.2 A and AA Relationship Register](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical_WCAG_AA_Relationship_Register.md) — normalized source of truth with one row per relationship, WCAG level, relationship type, classification and scope note.
 - [Canonical Test Library — WCAG 2.2 A and AA Summary](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical_Test_Library_WCAG_AA_Summary.md) — one-row-per-test human-readable view generated from the register.
-- [Canonical Test Library](<Canonical Test Library.md>) — the stable 200-item requirement and outcome library.
+- [Canonical Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Library.md) — the stable 200-item requirement and outcome library.
 
 Only WCAG 2.2 Levels A and AA are included in the active relationship register. Stronger, broader or otherwise non-equivalent requirements remain active as **highly recommended best practices** and must not be reported automatically as WCAG failures.
 
@@ -5542,7 +5550,7 @@ ai_ingestion_guidance:
 
 # Canonical WCAG 2.2 A and AA Relationship Register
 
-This is the canonical, normalized relationship register between the 200-item [Canonical Test Library](<Canonical Test Library.md>) and WCAG 2.2 Levels A and AA.
+This is the canonical, normalized relationship register between the 200-item [Canonical Test Library](https://github.com/Double-FW/QA_Accessibility_Testing/blob/2245678da0fa140fca54c059d6501879c8e95071/Canonical%20Test%20Library.md) and WCAG 2.2 Levels A and AA.
 
 WCAG provides an important minimum technical baseline, but it is not a complete model of inclusive design, usability, autonomy, equivalence, satisfaction or current specialist practice. The repository therefore retains requirements that go beyond WCAG. Those records are labelled **highly recommended best practice** rather than being attributed to WCAG.
 

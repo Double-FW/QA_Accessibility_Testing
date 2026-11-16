@@ -28,7 +28,7 @@ Unresolved applicability creates a review action, not an exemption. Multiple law
 
 Create this chain: obligation → service requirement → journey/state → canonical test reference → local procedure → execution → finding → issue → verification → report claim.
 
-Use the [Canonical Test Library](<../Canonical Test Library.md>) for outcomes, the [WCAG relationship register](../Canonical_WCAG_AA_Relationship_Register.md) for supported WCAG 2.2 A/AA relationships, and the [detailed procedures](../Mobile_Application_and_Website_Test_Library.md) and [ACT-style system](../Accessibility_ACT-Style_Test_System.md) for procedure design. Preserve source file, ID, title and revision. AXE IDs, CTL IDs and local executable IDs occupy separate fields.
+Use the [Canonical Test Library](<../Canonical Test Library.md>) for outcomes, the [WCAG relationship register](../Canonical_WCAG_AA_Relationship_Register.md) for supported WCAG 2.2 A/AA relationships, and the [mobile/web requirement catalogue](../Mobile_Application_and_Website_Test_Library.md) for additional outcomes. Use the [ACT-style system](../Accessibility_ACT-Style_Test_System.md) and the template below to author local procedures. The mobile/web catalogue has unverified originating sources and is not itself a complete procedural library. Preserve source file, ID, title and revision. AXE IDs, CTL IDs and local executable IDs occupy separate fields.
 
 Some obligations concern terminal hardware, support, communications, governance or legal information beyond these web/mobile libraries. Create a clearly identified local supplementary test and obtain relevant expertise. Never invent a canonical ID or imply WCAG covers an unmapped obligation.
 

@@ -1,7 +1,7 @@
 ---
 title: "Canonical WCAG 2.2 A and AA Relationship Register"
-version: "1.0"
-date: "2026-09-20"
+version: "1.1"
+date: "2026-11-16"
 status: "Canonical standards-relationship register"
 source_library: "Canonical Test Library.md version 1.1"
 wcag_version: "2.2"
@@ -46,6 +46,7 @@ WCAG provides an important minimum technical baseline, but it is not a complete 
 
 - [Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/)
 - [WCAG 2.2 conformance requirements](https://www.w3.org/TR/WCAG22/#conformance-reqs)
+- [Understanding Non-text Contrast and its relationship with Focus Visible](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html) supports the CTL-010 scope note; author-defined focus contrast is distinct from AAA Focus Appearance.
 - W3C Understanding documents may support interpretation but are informative; the normative Recommendation controls the success-criterion wording and conformance requirements.
 
 | Canonical test | Test title | WCAG SC | WCAG SC title | Level | Relationship | Test classification | Scope note |
@@ -63,7 +64,8 @@ WCAG provides an important minimum technical baseline, but it is not a complete 
 | CTL-007 | Data Series Not Differentiated Only by Colour | 1.1.1 | Non-text Content | A | partial support | WCAG A/AA aligned requirement | This atomic test supplies evidence for the listed criteria; complete conformance requires evaluation of each criterion’s full scope and exceptions. |
 | CTL-008 | Text Contrast Minimum | 1.4.3 | Contrast (Minimum) | AA | direct requirement | WCAG A/AA aligned requirement | Substantive A/AA alignment within the declared test scope; complete criterion conformance still requires all conditions and exceptions to be evaluated. |
 | CTL-009 | Large Text Contrast Minimum | 1.4.3 | Contrast (Minimum) | AA | direct requirement | WCAG A/AA aligned requirement | Substantive A/AA alignment within the declared test scope; complete criterion conformance still requires all conditions and exceptions to be evaluated. |
-| CTL-010 | Focus Indicator Contrast | 2.4.7 | Focus Visible | AA | organisation policy | Highly recommended best practice | Focus-indicator contrast is highly recommended, but WCAG 2.2 AA SC 2.4.7 requires visibility rather than the removed enhanced appearance threshold. |
+| CTL-010 | Focus Indicator Contrast | 1.4.11 | Non-text Contrast | AA | direct requirement | WCAG A/AA aligned requirement | Author-defined visual information needed to identify focus must meet SC 1.4.11 contrast against adjacent colours (3:1), subject to its applicability and exceptions, including unmodified user-agent appearance and inactive components. Do not impose SC 2.4.13 AAA area or change-of-state thresholds. |
+| CTL-010 | Focus Indicator Contrast | 2.4.7 | Focus Visible | AA | partial support | WCAG A/AA aligned requirement | Contrast evidence supports focus visibility but does not alone establish SC 2.4.7; evaluate whether keyboard focus is visible throughout the applicable interaction. |
 | CTL-011 | Control Boundary Contrast | 1.4.11 | Non-text Contrast | AA | direct requirement | WCAG A/AA aligned requirement | Substantive A/AA alignment within the declared test scope; complete criterion conformance still requires all conditions and exceptions to be evaluated. |
 | CTL-012 | Placeholder Contrast Adequacy | 1.4.3 | Contrast (Minimum) | AA | direct requirement | WCAG A/AA aligned requirement | Substantive A/AA alignment within the declared test scope; complete criterion conformance still requires all conditions and exceptions to be evaluated. |
 | CTL-013 | Legibility Under Blur or Reduced Clarity | 1.4.3 | Contrast (Minimum) | AA | organisation policy | Highly recommended best practice | Blur evaluation is an inclusive-design method, not a WCAG A/AA requirement. |

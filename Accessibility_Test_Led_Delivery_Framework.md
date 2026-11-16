@@ -1,8 +1,8 @@
 ---
 title: "Accessibility Test-Led Delivery Framework"
 subtitle: "An organisation-agnostic model for requirements, design, engineering, testing, release, and continuous improvement"
-version: "1.1"
-date: "2026-09-20"
+version: "1.2"
+date: "2026-11-16"
 status: "Reusable framework"
 repository: "https://github.com/Double-FW/QA_Accessibility_Testing"
 source_boundary: "Only documents and test assets in the Double FW QA_Accessibility_Testing repository"
@@ -56,7 +56,7 @@ The framework is grounded only in the documents and tests held in the [Double FW
 
 - Every H2 heading beginning `ATLF-` is a self-contained retrieval chunk.
 - A repository test must be cited as `library name + test number + test title`. For example, `Canonical Test Library, test 94, No Keyboard Trap` is unambiguous; `test 94` is not.
-- The [Canonical Test Library](<Canonical Test Library.md>) contains 200 numbered outcome-based tests. The [Mobile Application and Website Test Library](Mobile_Application_and_Website_Test_Library.md) contains 432 numbered, more detailed test entries. Their number spaces are independent.
+- The [Canonical Test Library](<Canonical Test Library.md>) contains 200 numbered outcome-based tests. The [Mobile Application and Website Test Library](Mobile_Application_and_Website_Test_Library.md) contains 432 numbered requirements and supported user outcomes; these are not complete executable procedures. Their number spaces are independent.
 - `AXE rule ID` means an identifier in the repository's AXE artefacts. It is not a canonical test ID and must not be stored in the same field.
 - A link in this framework points only to a file in the repository or to the repository itself.
 - When a repository file and this framework differ in granularity, the repository file supplies the test detail; this framework supplies the delivery and governance context.
@@ -158,9 +158,9 @@ The repository is a set of related layers rather than one flat checklist.
 | [Canonical Test Library — WCAG 2.2 A and AA Summary](Canonical_Test_Library_WCAG_AA_Summary.md) | Supplies the generated one-row-per-test view and identifies highly recommended best practices. | It is a generated view; the normalized relationship register is authoritative. |
 | [Superseded Exact WCAG Alignment](<Canonical Test Library Alignment to Exact WCAG SC IDs.md>) | Retains historical link continuity. | Do not use it for current mapping or conformance reporting. |
 | [Canonical Test Inventory: token dependencies and bi-directional component mapping](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>) | Connects canonical tests to affected patterns, components, and inferred design-token dependencies in both directions. | Token and component dependencies are implementation inferences that must be validated against the product's design system. |
-| [Mobile Application and Website Test Library](Mobile_Application_and_Website_Test_Library.md) | Supplies 432 detailed test entries with requirements and supported user behaviour. | This is a separate number space and may overlap with the canonical library. |
+| [Mobile Application and Website Test Library](Mobile_Application_and_Website_Test_Library.md) | Supplies 432 requirements and supported user outcomes; originating sources are unverified and local procedures must be authored. | This is a separate number space and may overlap with the canonical library. |
 | [Accessibility ACT-Style Test System](Accessibility_ACT-Style_Test_System.md) | Supplies repeatable pattern and design-practice procedures with objectives, setup, steps, expected outcomes, and interpretation. | Pattern tests complement rather than replace journey testing. |
-| [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>) | Indicates direct, partial, or unevidenced automated coverage for each canonical test and identifies the needed manual complement. | Its `D`, `P`, and `N` ratings are analytical coverage indicators, not execution results. |
+| [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>) | Identifies unverified candidate mappings, unevidenced automation and manual complements. | Current `U`/`N` mapping states and unverified duplication cannot be counted as coverage or execution results. |
 | [AXE Test AA Rule Descriptions](AXE_Test_AA_Rule_Descriptions.md) | Provides AXE rule descriptions and associated mappings. | AXE rule IDs remain distinct from repository test IDs. |
 | [AXE and Test Inventory Alignment](<AXE_and _Test_Inventory_Alignment.md>) | Links AXE rules to related canonical areas and states whether manual work is needed for a conclusive result. | A related test is not necessarily a one-to-one or complete implementation mapping. |
 | [AXE Test Remediation Prompt Library](AXE_Test_Remediation_Prompt_Library.md) | Supports structured investigation and remediation after an AXE finding. | A remediation prompt is guidance, not proof that a fix is correct. |
@@ -168,7 +168,7 @@ The repository is a set of related layers rather than one flat checklist.
 
 ### Repository authority rule
 
-Use the canonical library as the stable outcome index. Use the detailed web/mobile and ACT-style libraries to add procedure and context. Use the cross-reference and AXE assets to select an execution method. Preserve the original source identity of every mapped item.
+Use the canonical library as the stable outcome index. Use the web/mobile catalogue for additional requirements and context, and the ACT-style library to help author local procedures. Use the cross-reference and AXE assets to select an execution method. Preserve the original source identity of every mapped item.
 
 ### Reconciliation rule
 
@@ -301,7 +301,7 @@ This feedback loop is the main advantage of test-led delivery. Testing does not 
 
 - Write each requirement as a user outcome rather than a tool rule or implementation instruction.
 - Record a stable requirement ID, title, statement, rationale, applicability, priority, owner, acceptance conditions, and version.
-- Start selection from the [Canonical Test Library](<Canonical Test Library.md>), then add procedural detail from the [Mobile Application and Website Test Library](Mobile_Application_and_Website_Test_Library.md) or [Accessibility ACT-Style Test System](Accessibility_ACT-Style_Test_System.md).
+- Start selection from the [Canonical Test Library](<Canonical Test Library.md>), then consult the [Mobile Application and Website Test Library](Mobile_Application_and_Website_Test_Library.md) for additional requirements and the [Accessibility ACT-Style Test System](Accessibility_ACT-Style_Test_System.md) for procedural examples. Author the local procedure explicitly.
 - Map the requirement to affected components, patterns, content types, states, and journeys using the repository's component and token mapping as an initial hypothesis.
 - Map the requirement to every relevant validation method. Do not force an automated method where the repository cross-reference indicates that reliable automated coverage is absent.
 - Put product-specific acceptance conditions into delivery work while preserving the link to the reusable requirement.
@@ -444,11 +444,13 @@ Research with disabled participants answers whether people can complete realisti
 
 ### Selection method
 
-Use the `D`, `P`, and `N` classifications in the [automated-to-manual cross-reference](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>) as planning evidence:
+Use the current [automated-to-manual cross-reference](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>) to identify evidence gaps:
 
-- `D`: automation may directly evaluate part of the condition; confirm whether qualitative or cross-state judgement remains.
-- `P`: automation supports discovery or structure checking; human evaluation is needed for a conclusion.
-- `N`: manual or user-centred evaluation is primary unless the team develops and validates a reliable product-specific assertion.
+- `U`: the earlier positive mapping has not been validated against a specific rule, version, configuration and assertion scope. Qualify it before claiming direct or partial coverage.
+- `N`: reliable automation was not evidenced in the source material; this does not prove that a tool lacks the capability. Use appropriate human validation unless a product-specific assertion is developed and validated.
+- Cross-tool duplication remains unverified until actual assertions, applicability and observations have been compared.
+
+Neither mapping state is an execution result. Prior D/P ratings are superseded; do not use them to calculate coverage or select a preferred tool combination.
 
 ### Human evidence record
 
@@ -511,7 +513,7 @@ The product or service owner recommends the treatment of unresolved issues. The 
 1. **State the decision.** Define whether the evidence will support design approval, development completion, regression, release, procurement, remediation closure, or research.
 2. **Identify outcomes.** Select applicable outcomes from the [Canonical Test Library](<Canonical Test Library.md>).
 3. **Identify affected assets.** Use the [component and token mapping](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>) to find components, patterns, and design-system dependencies.
-4. **Add procedure.** Select detailed entries from the [Mobile Application and Website Test Library](Mobile_Application_and_Website_Test_Library.md) and relevant pattern procedures from the [Accessibility ACT-Style Test System](Accessibility_ACT-Style_Test_System.md).
+4. **Author the local procedure.** Use additional requirements from the [Mobile Application and Website Test Library](Mobile_Application_and_Website_Test_Library.md), relevant [ACT-style procedures](Accessibility_ACT-Style_Test_System.md) and the [service-specific script template](Reporting/Service_Scope_and_Test_Scripts.md). Record setup, steps and observable expected outcomes.
 5. **Choose methods.** Use the [automated-to-manual cross-reference](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>) and AXE alignment artefacts to decide what automation can contribute and which human checks remain necessary.
 6. **Define the test matrix.** Name the components, content types, states, journeys, platforms, inputs, assistive technologies, and user groups required by risk.
 7. **Check for gaps and duplication.** Record uncovered outcomes and redundant executions before work starts.
@@ -838,9 +840,9 @@ This framework references only the following repository files:
 3. [Canonical_WCAG_AA_Relationship_Register.md](Canonical_WCAG_AA_Relationship_Register.md) — canonical normalized mapping to WCAG 2.2 A/AA with relationship type, classification and scope note.
 4. [Canonical_Test_Library_WCAG_AA_Summary.md](Canonical_Test_Library_WCAG_AA_Summary.md) — generated one-row-per-test standards and best-practice summary.
 5. [Canonical Test Inventory: token dependencies and bi-directional component mapping.md](<Canonical Test Inventory: token dependencies and bi-directional component mapping.md>) — test, component, pattern, and token dependency mappings.
-6. [Mobile_Application_and_Website_Test_Library.md](Mobile_Application_and_Website_Test_Library.md) — 432 numbered detailed web and mobile test entries.
+6. [Mobile_Application_and_Website_Test_Library.md](Mobile_Application_and_Website_Test_Library.md) — 432 numbered web/mobile requirement and outcome entries; originating provenance remains unverified.
 7. [Accessibility_ACT-Style_Test_System.md](Accessibility_ACT-Style_Test_System.md) — repeatable pattern, practice, and cross-cutting interpretation tests.
-8. [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>) — direct, partial, and unevidenced automation coverage plus manual complements for the 200 canonical tests.
+8. [Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md](<Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>) — unverified candidate mappings, unevidenced automation and manual complements for the 200 canonical tests.
 9. [AXE_Test_AA_Rule_Descriptions.md](AXE_Test_AA_Rule_Descriptions.md) — AXE rule descriptions and mappings used by the repository.
 10. [AXE_and _Test_Inventory_Alignment.md](<AXE_and _Test_Inventory_Alignment.md>) — AXE-to-canonical alignment and manual work needed for conclusive results.
 11. [AXE_Test_Remediation_Prompt_Library.md](AXE_Test_Remediation_Prompt_Library.md) — structured prompts for investigating and remediating AXE findings.
