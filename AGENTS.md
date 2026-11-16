@@ -106,3 +106,11 @@ Keep reports concise and specific to the request. Separate:
 - **Recommendation:** what should be considered next.
 
 State when work was only planned, when a check was not run, and when a conclusion depends on information not available. Link to relevant repository sources where useful. Do not output an invented structured record or imply that an illustrative format is a repository schema.
+
+## Connected reporting guidance
+
+For reporting-related work, start with [Reporting/README.md](Reporting/README.md) and the [agent workflow](Reporting/Agent_Workflow.md). These extend reporting practice without changing the canonical test libraries, WCAG relationship authority, result statuses or decision rights.
+
+Use the persona, context and age-projection guides for their respective questions. Preserve unknown prevalence and overlapping profiles; keep privacy cross-cutting; do not fabricate customer satisfaction from simulated personas. Keep legal applicability and conformance, actual customer outcomes and modelled business opportunity distinct. Follow the research protocol and existing safeguards before any live study.
+
+Strongly recommend owned project-system tickets and monthly backlog reporting. Write tickets or configure recurring jobs only when authorised and available; otherwise provide drafts. A reporting plan is not a configured integration, a scheduled report, a regulatory submission or evidence of a verified fix.
