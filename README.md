@@ -3,7 +3,7 @@ title: "QA Accessibility Testing"
 description: "Governed accessibility test-management system for web, mobile, design systems, and digital services."
 repository: "Double-FW/QA_Accessibility_Testing"
 repository_url: "https://github.com/Double-FW/QA_Accessibility_Testing"
-version: "1.1"
+version: "1.2"
 status: "active"
 schema_version: "1.0"
 primary_use_cases:
@@ -13,6 +13,7 @@ primary_use_cases:
   - "automation-to-manual crosswalk"
   - "remediation brief generation"
   - "evidence and release governance"
+  - "regulatory and customer impact reporting"
 authority_boundary:
   - "This repository provides a governed evidence model, not legal conformance interpretation."
   - "Use authoritative source files for testing and mapping decisions."
@@ -32,6 +33,23 @@ It supports:
 - evidence-based release and governance decisions
 
 This repository is not a legal conformance engine, and it does not replace authorised governance for legal interpretation, procurement sign-off, or regulatory claims.
+
+---
+
+## Reporting and customer impact
+
+Use these connected guides to turn QA evidence into action and explain the value of improvements:
+
+| Folder | Use |
+| --- | --- |
+| [Regulatory reporting](Reporting/README.md) | Service-specific obligation mapping, test scripts, risk prioritisation, project tickets and monthly backlog progress |
+| [Persona-led reporting](Persona_Led_Reporting/README.md) | EAA functional profiles, possible condition associations, customer reach, comparative experience, rolling research and A/B testing |
+| [Situation and environmental impact](Situation_and_Environmental_Impact/README.md) | Context exposure, customer benefit, reach, commercial value and accessible engagement |
+| [Age-related impact projections](Age_Related_Impact_Projection/README.md) | Population/customer age scenarios, changing needs, retention and future investment |
+
+Start with the [reporting workflow](Reporting/Agent_Workflow.md) and [source/legal boundaries](Reporting/Sources_and_Legal_Boundaries.md). These are practitioner guidance and templates, not executable integrations or independent authorities. Existing canonical tests and WCAG mappings retain their authority. Satisfaction is supporting experience evidence, not a substitute for applicable requirements.
+
+The four views share service, journey, test, execution and issue references. They keep conformance, functional outcomes, equality/adjustment evidence and business opportunity distinct.
 
 ---
 
@@ -121,6 +139,30 @@ Important rules:
 
 ```yaml
 resources:
+  - file: "Reporting/README.md"
+    resource_type: "reporting_guidance"
+    authority_level: "practitioner-guidance"
+    purpose: "Regulatory scope, scripts, priorities, tickets and monthly progress."
+    machine_readable: true
+
+  - file: "Persona_Led_Reporting/README.md"
+    resource_type: "experience_reporting_guidance"
+    authority_level: "practitioner-guidance"
+    purpose: "Functional profiles, reach, research and comparative experience."
+    machine_readable: true
+
+  - file: "Situation_and_Environmental_Impact/README.md"
+    resource_type: "context_reporting_guidance"
+    authority_level: "practitioner-guidance"
+    purpose: "Context exposure, customer value and engagement opportunities."
+    machine_readable: true
+
+  - file: "Age_Related_Impact_Projection/README.md"
+    resource_type: "projection_guidance"
+    authority_level: "practitioner-guidance"
+    purpose: "Population and customer age scenarios for future service planning."
+    machine_readable: true
+
   - file: "README.md"
     resource_type: "index"
     authority_level: "governance"
@@ -218,6 +260,16 @@ resources:
 
 ```yaml
 task_routing:
+  - task: "reporting_and_customer_impact"
+    read_first:
+      - "Reporting/README.md"
+      - "Reporting/Agent_Workflow.md"
+      - "Reporting/Sources_and_Legal_Boundaries.md"
+    read_next:
+      - "Persona_Led_Reporting/README.md"
+      - "Situation_and_Environmental_Impact/README.md"
+      - "Age_Related_Impact_Projection/README.md"
+
   - task: "governance_or_policy"
     read_first:
       - "Accessibility_Test_Led_Delivery_Framework.md"
@@ -470,7 +522,7 @@ When used correctly, it supports evidence-based QA, safe remediation planning, a
 {
   "repo": "Double-FW/QA_Accessibility_Testing",
   "url": "https://github.com/Double-FW/QA_Accessibility_Testing",
-  "version": "1.1",
+  "version": "1.2",
   "purpose": "Governed accessibility evidence and QA system",
   "primary_sources": [
     "Accessibility_Test_Led_Delivery_Framework.md",
