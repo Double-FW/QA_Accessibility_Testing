@@ -3,7 +3,7 @@ title: "QA Accessibility Testing"
 description: "Governed accessibility test-management system for web, mobile, design systems, and digital services."
 repository: "Double-FW/QA_Accessibility_Testing"
 repository_url: "https://github.com/Double-FW/QA_Accessibility_Testing"
-version: "1.2"
+version: "1.3"
 status: "active"
 schema_version: "1.0"
 primary_use_cases:
@@ -59,7 +59,7 @@ Use this repository to:
 - identify the right accessibility tests for a product, journey, component, or design pattern
 - differentiate conformance evidence from usability and quality evidence
 - map tests to WCAG outcomes
-- identify where automation is direct, partial, or manual-primary
+- qualify proposed automation against specific rules, versions, configurations and outcome scope, retaining unverified mappings and manual validation
 - generate remediation briefs for human review
 - maintain evidence, exceptions, and decision traceability
 
@@ -100,9 +100,9 @@ authority_layers:
     file: "Canonical_Test_Library_WCAG_AA_Summary.md"
     role: "derived summary view of WCAG mappings"
     authority_level: "derived-view"
-  detailed_procedures:
+  mobile_web_requirements:
     file: "Mobile_Application_and_Website_Test_Library.md"
-    role: "detailed procedures for testing"
+    role: "requirement and outcome catalogue; local procedures must be authored"
     authority_level: "authoritative-source"
   act_style:
     file: "Accessibility_ACT-Style_Test_System.md"
@@ -212,9 +212,9 @@ resources:
     machine_readable: true
 
   - file: "Mobile_Application_and_Website_Test_Library.md"
-    resource_type: "detailed_tests"
+    resource_type: "requirements_catalogue"
     authority_level: "authoritative-source"
-    purpose: "Detailed mobile and web accessibility procedures and checks."
+    purpose: "432 mobile/web requirements and outcomes with unverified originating sources; not a complete procedural library."
     machine_readable: true
 
   - file: "Accessibility_ACT-Style_Test_System.md"
@@ -292,8 +292,10 @@ task_routing:
 
   - task: "detailed_procedure_or_pattern"
     read_first:
-      - "Mobile_Application_and_Website_Test_Library.md"
       - "Accessibility_ACT-Style_Test_System.md"
+      - "Reporting/Service_Scope_and_Test_Scripts.md"
+    read_next:
+      - "Mobile_Application_and_Website_Test_Library.md"
 
   - task: "automation_vs_manual"
     read_first:
@@ -462,17 +464,17 @@ health_checks:
 
 ```yaml
 external_links:
-  - name: "EAA Scope and Applicability Gate"
-    url: "https://github.com/Double-FW/Articles_and_other_LLM_Training_Resources/blob/main/EAA_Scope_and_Applicability_Gate.md"
-    purpose: "Assesses whether the European Accessibility Act applies and what scope is in play."
+  - name: "EAA scope and applicability guide"
+    url: "https://github.com/Double-FW/European-Accessibility-Act-EAA-Compliance-Approach/blob/main/guides/01-scope-and-applicability.md"
+    purpose: "Public practitioner guidance for service facts, jurisdiction and EAA applicability review."
 
-  - name: "Inclusive Digital Service Outcome Dataset"
-    url: "https://github.com/Double-FW/Inclusive_and_Effective_Design/blob/main/Inclusive_Digital_Service_Outcome_Dataset.md"
-    purpose: "Provides outcome-based service and inclusion evidence context."
+  - name: "Customer outcomes and research guide"
+    url: "https://github.com/Double-FW/European-Accessibility-Act-EAA-Compliance-Approach/blob/main/guides/04-customer-outcomes-and-research.md"
+    purpose: "Public guidance on functional needs, actual task outcomes and research limits; not a replacement copy of the private outcome dataset."
 
-  - name: "EAA Evidence and Conformity Record Model"
-    url: "https://github.com/Double-FW/Articles_and_other_LLM_Training_Resources/blob/main/EAA_Evidence_and_Conformity_Record_Model.md"
-    purpose: "Structures evidence and conformity records for review and governance."
+  - name: "EAA evidence, conformity and claims guide"
+    url: "https://github.com/Double-FW/European-Accessibility-Act-EAA-Compliance-Approach/blob/main/guides/05-evidence-conformity-and-claims.md"
+    purpose: "Public practitioner guidance on evidence chains, review and bounded conformity claims."
 ```
 
 These are supporting resources. They do not replace this repository’s internal source-of-truth files.
@@ -507,7 +509,7 @@ This repository is best used as a layered accessibility evidence system:
 - governance layer for decision-making
 - canonical layer for outcomes
 - standards layer for WCAG mapping
-- detailed procedural layer for execution
+- requirement catalogues and ACT-style procedures to support locally authored execution plans
 - automation layer for interpretation
 - remediation layer for candidate fixes
 - design-system layer for dependency analysis
@@ -522,7 +524,7 @@ When used correctly, it supports evidence-based QA, safe remediation planning, a
 {
   "repo": "Double-FW/QA_Accessibility_Testing",
   "url": "https://github.com/Double-FW/QA_Accessibility_Testing",
-  "version": "1.2",
+  "version": "1.3",
   "purpose": "Governed accessibility evidence and QA system",
   "primary_sources": [
     "Accessibility_Test_Led_Delivery_Framework.md",

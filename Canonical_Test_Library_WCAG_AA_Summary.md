@@ -1,7 +1,7 @@
 ---
 title: "Canonical Test Library — WCAG 2.2 A and AA Summary"
-version: "1.0"
-date: "2026-09-20"
+version: "1.1"
+date: "2026-11-16"
 status: "Generated human-readable summary"
 canonical_source: "Canonical_WCAG_AA_Relationship_Register.md"
 generation_rule: "Regenerate from the canonical register; do not edit classifications independently"
@@ -26,7 +26,7 @@ The standards source is the [WCAG 2.2 W3C Recommendation](https://www.w3.org/TR/
 | 7 | Data Series Not Differentiated Only by Colour | Perceivable | 1.4.1, 1.1.1 | WCAG A/AA aligned requirement | This atomic test supplies evidence for the listed criteria; complete conformance requires evaluation of each criterion’s full scope and exceptions. |
 | 8 | Text Contrast Minimum | Perceivable | 1.4.3 | WCAG A/AA aligned requirement | Substantive A/AA alignment within the declared test scope; complete criterion conformance still requires all conditions and exceptions to be evaluated. |
 | 9 | Large Text Contrast Minimum | Perceivable | 1.4.3 | WCAG A/AA aligned requirement | Substantive A/AA alignment within the declared test scope; complete criterion conformance still requires all conditions and exceptions to be evaluated. |
-| 10 | Focus Indicator Contrast | Operable | 2.4.7 | Highly recommended best practice | Focus-indicator contrast is highly recommended, but WCAG 2.2 AA SC 2.4.7 requires visibility rather than the removed enhanced appearance threshold. |
+| 10 | Focus Indicator Contrast | Operable | 1.4.11, 2.4.7 | WCAG A/AA aligned requirement | Author-defined visual information needed to identify focus must meet SC 1.4.11 contrast against adjacent colours (3:1), subject to its applicability and exceptions, including unmodified user-agent appearance and inactive components. Do not impose SC 2.4.13 AAA area or change-of-state thresholds. Contrast evidence supports focus visibility but does not alone establish SC 2.4.7; evaluate whether keyboard focus is visible throughout the applicable interaction. |
 | 11 | Control Boundary Contrast | Perceivable | 1.4.11 | WCAG A/AA aligned requirement | Substantive A/AA alignment within the declared test scope; complete criterion conformance still requires all conditions and exceptions to be evaluated. |
 | 12 | Placeholder Contrast Adequacy | Perceivable | 1.4.3 | WCAG A/AA aligned requirement | Substantive A/AA alignment within the declared test scope; complete criterion conformance still requires all conditions and exceptions to be evaluated. |
 | 13 | Legibility Under Blur or Reduced Clarity | Perceivable | 1.4.3 | Highly recommended best practice | Blur evaluation is an inclusive-design method, not a WCAG A/AA requirement. |

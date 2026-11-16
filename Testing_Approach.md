@@ -1,6 +1,6 @@
 # Test Management Approach
 
-> **Version 1.1 — 20 September 2026.** Governance aligned with the [Accessibility Test-Led Delivery Framework](Accessibility_Test_Led_Delivery_Framework.md).
+> **Version 1.2 — 16 November 2026.** Governance aligned with the [Accessibility Test-Led Delivery Framework](Accessibility_Test_Led_Delivery_Framework.md).
 
 ## Purpose of this Document
 
@@ -12,7 +12,7 @@ It is designed for both human practitioners and GPT-based systems. It explains n
 
 Accessibility testing must be treated as a managed function embedded across the delivery lifecycle. It is not sufficient to run occasional audits or rely on specialist review at the end of delivery. Testing must exist at multiple levels, including component testing, design pattern testing, journey testing, release testing, procurement validation, and post-release monitoring. When testing is positioned only as a final compliance gate, issues are discovered too late, rework costs rise, and accessibility becomes fragile and inconsistent.
 
-A mature test management approach therefore begins with the assumption that accessibility needs to be expressed early as outcome-based requirements, translated into specific testable behaviours, and tracked throughout design, engineering, QA, and operations. Each accessibility requirement should have at least one automatable test and at least one manual or assisted test. This creates a more reliable model because automated checks help prevent regressions while manual and user-centred methods reveal the behavioural and experiential barriers that automation cannot detect.
+A mature test management approach therefore begins with the assumption that accessibility needs to be expressed early as outcome-based requirements, translated into specific testable behaviours, and tracked throughout design, engineering, QA, and operations. Each in-scope accessibility requirement must have a sufficient, documented validation route. Use automated assertions where they produce reliable evidence, together with the manual, assistive-technology, user-research or process evaluation needed for the outcome. Where no reliable automated assertion exists, record that limitation and the appropriate human validation; do not invent automation to satisfy a coverage quota. This creates a more reliable model because automated checks help prevent regressions while manual and user-centred methods reveal the behavioural and experiential barriers that automation cannot detect.
 
 ## The Purpose of Accessibility Testing
 

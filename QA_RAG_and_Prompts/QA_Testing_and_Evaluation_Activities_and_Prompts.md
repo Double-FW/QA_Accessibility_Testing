@@ -4,9 +4,17 @@
 **Source:** [Double-FW/QA_Accessibility_Testing](https://github.com/Double-FW/QA_Accessibility_Testing/tree/2245678da0fa140fca54c059d6501879c8e95071)  
 **Audience:** test leads, QA practitioners, researchers, accessibility specialists, engineers, service owners, procurement and HR/employee-experience partners.
 
+## Current corrections — 16 November 2026
+
+The 8 November source snapshot is historical. For present-day work, load the [current WCAG register](../Canonical_WCAG_AA_Relationship_Register.md), [derived summary](../Canonical_Test_Library_WCAG_AA_Summary.md), [automated/manual matrix](<../Automated-to-Manual Cross-Reference for the Canonical Accessibility Tests.md>), [testing approach](../Testing_Approach.md), [delivery framework](../Accessibility_Test_Led_Delivery_Framework.md), [mobile/web catalogue](../Mobile_Application_and_Website_Test_Library.md), [remediation prompts](../AXE_Test_Remediation_Prompt_Library.md) and [root index](../README.md).
+
+The corrections restore the AA focus-contrast relationship and its exceptions; withdraw unsubstantiated positive automation ratings in favour of U (unverified); require sufficient validation rather than automation for every requirement; clarify that the 432-entry library needs local procedures and has unknown originating provenance; separate text/non-text contrast thresholds and exceptions; and replace restricted/outdated supporting links with verified public guidance. Prior D/P ratings and the snapshot's CTL-010 classification must not be used as current evidence.
+
+Original source bodies and pinned hashes are retained for provenance. This notice changes editorial navigation, not the historical source records. The 17/17 coverage claim refers only to the pinned snapshot, not the current repository. If the current corrections are unavailable, identify the evidence gap and do not rely on the affected historical claims.
+
 ## Where the repository is useful
 
-Use this repository as a connected evidence and test-management resource. The test-led delivery framework governs lifecycle, scope, traceability and decisions; the canonical library indexes outcomes; the relationship register owns WCAG 2.2 A/AA relationships; detailed mobile/web and ACT-style entries support procedures; automation and dependency mappings support method selection and investigation.
+Use this repository as a connected evidence and test-management resource. The test-led delivery framework governs lifecycle, scope, traceability and decisions; the canonical library indexes outcomes; the relationship register owns WCAG 2.2 A/AA relationships; the mobile/web requirement catalogue and ACT-style entries inform locally authored procedures; automation and dependency mappings support method selection and investigation.
 
 The repository contains guidance, not a product under test, execution environment or installed runner. Preserve CTL, detailed mobile/web, ACT-style and AXE identities; identical numbers are not identical tests. WCAG relationships, automation ratings, summaries and component/token maps are not execution evidence. The former Exact WCAG alignment file is superseded. Keep repository policy, technical conformance and human outcomes distinct, preserve uncertain result states and leave release, exceptions and risk decisions to authorised people.
 
@@ -14,13 +22,13 @@ The activities below are an editorial application of the repository, not a claim
 
 ## How to use the prompts
 
-1. Attach [RAG_Reference.md](RAG_Reference.md). For selective retrieval, use the source routes below and [Source_Coverage.md](Source_Coverage.md).
+1. Load the current corrections linked above, then attach [RAG_Reference.md](RAG_Reference.md) for historical context. For selective retrieval, use the source routes below and [Source_Coverage.md](Source_Coverage.md).
 2. Replace bracketed inputs with the actual project brief, artefacts and evidence. Supply the target task, audience, platform/setting, constraints and intended decision. Treat missing information as unknown.
 3. Use either example prompt for the activity. Both refer to this folder’s reference. Supply only appropriate project information; use anonymised research findings where possible.
 4. Require source ID, filename and original section citations; distinguish source guidance, local proposal, observed result and uncertainty. Ask for evidence requests where an artefact cannot be inspected.
 5. Review the result with the named human roles and record decisions. A prompt output is a draft test/evaluation aid, not implementation or evidence that a test ran. Do not defer disabled people’s involvement until final testing.
 
-**Reusable response contract:** “Use the attached RAG_Reference.md as the knowledge source. Cite source IDs, files and sections. Distinguish source statements, project evidence, recommendations and unknowns. Preserve applicable source identifiers. Do not invent research, capability, approvals or test results. Give a concrete test/evaluation artefact, trade-offs, evidence requests and decisions for the human team.”
+**Reusable response contract:** “Use the current corrections first and the attached RAG_Reference.md as historical source context. Cite source IDs, files and sections. Distinguish source statements, project evidence, recommendations and unknowns. Preserve applicable source identifiers. Do not invent research, capability, approvals or test results. Give a concrete test/evaluation artefact, trade-offs, evidence requests and decisions for the human team.”
 
 ## Activity map
 
@@ -76,7 +84,7 @@ The activities below are an editorial application of the repository, not a claim
 ### Tasks the repository can support
 
 - Retrieve applicable outcomes by user task rather than take every test.
-- Add detailed or pattern procedures using source-qualified identities.
+- Use source-qualified mobile/web requirements and ACT-style patterns to author local procedures; do not treat requirement entries as completed scripts.
 - Identify gaps, duplicates, exclusions and risk-based sampling.
 
 **Expected output:** A source-qualified test-selection and coverage matrix.
@@ -111,7 +119,7 @@ The activities below are an editorial application of the repository, not a claim
 
 ### Example prompt 1
 
-> Use the RAG’s canonical WCAG relationship register to map [selected CTL tests]. Preserve exact SC IDs, A/AA level, relationship type and scope note. Distinguish direct requirement, partial support, related technique and organisation policy. State what further evidence a whole-criterion conclusion needs; do not use the superseded Exact mapping or title similarity.
+> Use the current canonical WCAG relationship register linked above to map [selected CTL tests]. Preserve exact SC IDs, A/AA level, relationship type and scope note. Distinguish direct requirement, partial support, related technique and organisation policy. State what further evidence a whole-criterion conclusion needs; do not use the superseded Exact mapping or title similarity.
 
 ### Example prompt 2
 
@@ -137,7 +145,7 @@ The activities below are an editorial application of the repository, not a claim
 
 ### Example prompt 1
 
-> Using the RAG, plan automation for [states, components and journeys]. Use the automated/manual cross-reference and AXE alignment to identify direct/partial/unevidenced coverage and manual complements. Specify actual rendered-state scope, tool version to confirm, assertions and evidence. Treat D/P/N as coverage indicators, not results, and do not invent automation where judgement is essential.
+> Using the RAG, plan automation for [states, components and journeys]. Use the current automated/manual cross-reference and AXE alignment to identify unverified candidates, unevidenced automation and manual complements. Specify actual rendered-state scope, rule IDs, tool/ruleset versions, configuration, assertion boundaries and validation evidence. Current U/N mapping states are not results; do not rely on superseded D/P ratings, and do not invent automation where judgement is essential.
 
 ### Example prompt 2
 
@@ -149,7 +157,7 @@ The activities below are an editorial application of the repository, not a claim
 
 **Retrieve:** [S001 — Accessibility_Test_Led_Delivery_Framework.md](RAG_Reference.md#s001); [S008 — Accessibility_ACT-Style_Test_System.md](RAG_Reference.md#s008); [S015 — Mobile_Application_and_Website_Test_Library.md](RAG_Reference.md#s015); [S016 — Testing_Approach.md](RAG_Reference.md#s016).
 
-**Relevant source sections:** ATLF-09 and ATLF-20; ACT-style and detailed mobile/web procedures.
+**Relevant source sections:** ATLF-09 and ATLF-20; ACT-style procedures and mobile/web requirements needing local procedures.
 
 ### Tasks the repository can support
 
