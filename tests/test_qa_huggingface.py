@@ -240,4 +240,16 @@ class QASyncTests(unittest.TestCase):
         self.assertEqual(w['permissions']['contents'],'read')
         self.assertEqual(w['jobs']['publish']['steps'][-1]['env']['HF_TOKEN'],'${{ secrets.HF_TOKEN }}')
 
+
+    def test_consolidated_catalogue_origin_context_and_placeholders_survive_export(self):
+        self.build()
+        rows=[r for r in self.rows('documents.jsonl')+self.rows('knowledge_chunks.jsonl') if r['source_path']=='Mobile_Application_and_Website_Test_Library.md']
+        self.assertTrue(rows)
+        for row in rows:
+            self.assertIn('source_origin_status: unverified',row['catalogue_provenance_context'])
+            self.assertIn('source_origin_location: unknown',row['catalogue_provenance_context'])
+        doc=next(r for r in self.rows('documents.jsonl') if r['source_path']=='Mobile_Application_and_Website_Test_Library.md')
+        self.assertEqual(doc['text'].count('Original source placeholder: "and".'),15)
+        self.assertNotIn('Source: Not recorded in the supplied catalogue;',doc['text'])
+
 if __name__=='__main__':unittest.main()
