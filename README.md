@@ -569,3 +569,11 @@ This repository is most effective when it is used as a structured evidence graph
 ## Hugging Face dataset publication
 
 The [Hugging Face dataset](https://huggingface.co/datasets/GarethFW/QA_Accessibility_Testing) is published from the approved current GitHub sources. Follow the [complete setup and verification guide](huggingface/SETUP.md) for creating a dataset-specific token, saving the GitHub secret, running the first sync and verifying publication. The historical `QA_RAG_and_Prompts` pack and superseded Exact WCAG alignment are excluded from dataset views. Publication preserves the repository's authority/evidence distinctions; it does not execute accessibility tests, validate automation coverage, configure monthly reporting or establish conformity.
+
+## About the author
+
+Gareth Ford Williams is a senior leader in accessibility and inclusive design and co-founder of Double FW Ltd. His work spans accessibility, UX, technical standards, assistive technology and inclusive media. At the BBC, he led accessibility and UX work and chaired standards governance, translating research and policy into practical guidance.
+
+## About Double FW Ltd
+
+Double FW Ltd is a UK accessibility and inclusive design consultancy. It helps organisations build accessibility into strategy, governance, brands, products, content and services. Its public repositories provide practical guidance for people and AI-assisted workflows.
